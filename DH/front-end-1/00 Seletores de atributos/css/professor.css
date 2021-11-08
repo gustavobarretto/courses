@@ -1,0 +1,142 @@
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+/* CRIME DETECTADO */
+
+* {
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Rajdhani', sans-serif;
+	color: #384047;
+	padding: 20px 0 60px;
+}
+h1 {
+  margin: 0 0 30px 0;
+  text-align: center;
+}
+img {
+  display: block;
+  margin: 1em auto 2em;
+}
+span {
+  font-size: 0.8em;
+}
+
+/* Main -------------------- */
+
+#container {
+	width: 400px;
+	margin: auto;
+}
+
+.logo {
+  width: 100%;
+}
+
+/* Form -------------------- */
+
+.form-contact {
+  padding: 20px 24px;
+  background: #E6E7E8;
+  border-radius: .5em;
+}
+label {
+  display: block;
+  margin-bottom: 0.5em; 
+  font-weight: 700;
+}
+input {
+  outline: 0;
+	border: none;
+	padding: 15px;
+	border-radius: .3em;
+	border-bottom: 3px solid rgba(0,0,0,0.05);
+}
+input[type="text"],
+input[type="password"] {
+	font-size: 1em;
+  color: #222;
+  font-weight: 300; 
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.2em;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08) inset;
+}
+input[type="submit"],
+input[type="reset"] {
+  font-size: 0.875em;
+  font-weight: 400;
+  cursor: pointer; 
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+  margin: 1em 0;
+  text-transform: uppercase;
+}
+input[type="submit"]:hover,
+input[type="reset"]:hover { 
+  opacity: .75; 
+}
+input:focus,
+textarea:focus {
+  border-color: #cb1e40;
+}
+
+/* Media Queries -------------------- */
+
+@media (min-width: 769px) {
+	#container {
+		max-width: 550px;
+	}
+}
+
+
+
+/* Respostas
+img[title="avatar"] {
+  border-radius: 50%;
+}
+
+input[type="password"] {
+  color: #ccc;
+}
+
+input[type="submit"] {
+  background-color: #cb1e40;
+}
+
+input[type="reset"] {
+    background-color: tomato;
+}
+*/

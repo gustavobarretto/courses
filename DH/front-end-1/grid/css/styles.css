@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    background-color: black;
+    color: white
+}
+
+.container {
+    padding: 25px;
+    text-align: center;
+
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    gap: 100px;
+}
+
+.itens {
+    padding: 20px;
+    justify-content: space-around;
+}
+
+.itens > img {
+    width: 250px;
+    height: 300px;
+    border-radius: 100px;
+}
+
+.itens > img:hover {
+    transition: 1s;
+    width: 270px;
+    height: 320px;
+    border-radius: 50px;
+}
+
+
+

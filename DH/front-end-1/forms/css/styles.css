@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form {
+    border: 3px black solid;
+    border-radius: 10px;
+    padding: 5%;
+    text-align: center;
+    width: 25%;
+    margin: 0 auto;
+}
+
+#password {
+    border-radius: 5px;
+    margin: 5px 5px;
+    padding: 0px ;
+}
+
+#usuario {
+    border-radius: 5px;
+    margin: 5px 5px;
+}
+

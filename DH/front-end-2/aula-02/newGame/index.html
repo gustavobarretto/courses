@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Pedra, Papel e Tesoura</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- <link href="https://fonts.googleapis.com/css2?family=Besley:wght@700&display=swap" rel="stylesheet"> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Pedra, Papel e Tesoura</h1>
+        <p>Vamos jogar pedra, papel e tesoura!</p>
+        <p>Selecione sua jogada contra o computador:</p>
+        <div class='options'>
+            <button class='1' onclick="play(1)">Pedra</button>
+            <button class='2' onclick="play(2)">Papel</button>
+            <button class='3' onclick="play(3)">Tesoura</button>
+        </div>
+        <div class="display">
+            <h3>Display:</h3>
+            <p class="resultado"></p>
+        </div>
+        <div class="rounds">
+            <h3>Round</h3>
+            <h2 class='round'>0</h2>
+        </div>
+    </div>
+    <script src="app.js/app.js"></script>
+</body>
+</html>

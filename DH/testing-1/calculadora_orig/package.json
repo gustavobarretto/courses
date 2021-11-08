@@ -1,0 +1,8 @@
+{
+    "name": "calculadora-js",
+    "main": "funcionalidad.js",
+    "scripts": {
+        "test": "jest",
+        "test:coverage": "jest --coverage"
+    }
+}

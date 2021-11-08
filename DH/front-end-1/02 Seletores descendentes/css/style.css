@@ -1,0 +1,23 @@
+/* Exemplo de seletor descendente */
+header span {
+    color: darkviolet;
+    font-size: 26px;
+}
+
+/* Utilize um seletor descendente para estilizar apenas os elementos [li] dentro de uma *lista não ordenada* alterando a cor do fundo para [tomato]*/
+
+
+
+
+
+
+/* Utilize um seletor descendente para estilizar apenas os elementos [li] dentro de uma *lista ordenada* alterando a cor do fundo para [tomato]*/
+
+
+
+
+
+
+
+
+/* Utilize um seletor descendente que  remove todas as estilizações padrão de links [a] dentro do [li] que estão dento de listas não ordenadas*/

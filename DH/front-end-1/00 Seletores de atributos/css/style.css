@@ -1,0 +1,24 @@
+/* Crie um seletor de atributo para um elemento [img] com o valor do atributo [title] de "avatar". Dê ao elemento um [border-radius] de [50%]. */
+img[title='avatar'] {
+    border-radius: 50%;
+}
+
+
+
+
+
+/* Em seguida, crie um novo seletor de atributo para elementos [input] com atributo [type] igual a [password]. Em seguida, defina sua cor DO TEXTO para #ccc. */
+
+
+
+
+
+
+
+/* Escreva um novo seletor de atributo para elementos [input] com um valor de atributo [type] de [submit]. Em seguida, defina uma cor de fundo de #cb1e40. */
+
+
+
+
+
+/*E pra arrematar, selecione o elemento [input] com um valor do atributo [type] de [reset]. Defina a cor de fundo como [tomato].*/

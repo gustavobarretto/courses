@@ -1,0 +1,56 @@
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: Automatizar Bucket S3
+
+Parameters:
+
+  BucketName:
+
+    Type: String
+
+    Description: bucket-do-gugu
+
+Metadata:
+
+  AWS::CloudFormation::Interface:
+
+    ParametersGroup:
+
+    - Label:
+
+            default: Bucket S3
+
+      Parameters:
+
+      - BucketName
+
+    ParametersLabel:
+
+      BucketName:
+
+        default: 'bucket-do-gugu'
+
+Resources:
+
+  S3Bucket:
+
+    Type: AWS::S3::Bucket
+
+    Properties:
+
+      BucketName: !Ref BucketName
+
+      PublicAccessBlockConfiguration:
+
+        BlockPublicAcls: true
+
+        BlockPublicPolicy: true
+
+        IgnorePublicAcls: true
+
+        RestrictPublicBuckets: true
+
+      VersioningConfiguration:
+
+        Status: Enabled
+

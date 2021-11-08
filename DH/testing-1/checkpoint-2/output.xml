@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20210929 12:28:13.949" rpa="false" schemaversion="2">
+<suite id="s1" name="Hurb" source="C:\Users\Gustavo\Desktop\DH\testing-1\checkpoint-2\Hurb.robot">
+<test id="s1-t1" name="Processo de reserva de pacote de viagens">
+<kw name="Abrir Browser" library="hurb">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${SITE}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210929 12:28:14.132" level="INFO">Opening browser 'chrome' to base url 'https://www.hurb.com/br'.</msg>
+<status status="PASS" starttime="20210929 12:28:14.131" endtime="20210929 12:28:17.342"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210929 12:28:22.352" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210929 12:28:17.342" endtime="20210929 12:28:22.352"/>
+</kw>
+<status status="PASS" starttime="20210929 12:28:14.131" endtime="20210929 12:28:22.352"/>
+</kw>
+<kw name="Clicar em &quot;Permitir todos os cookies&quot;" library="hurb">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${PERMITIR_COOKIES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210929 12:28:22.353" level="INFO">Clicking element 'css=#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll'.</msg>
+<status status="PASS" starttime="20210929 12:28:22.353" endtime="20210929 12:28:22.411"/>
+</kw>
+<status status="PASS" starttime="20210929 12:28:22.352" endtime="20210929 12:28:22.411"/>
+</kw>
+<kw name="Selecionar a opção &quot;Pacotes&quot;" library="hurb">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SELECIONAR_PACOTES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210929 12:28:22.412" level="INFO">Clicking element 'css=#__next &gt; div.Header_Header__1jiZz &gt; div.hrc-2LOsj &gt; div &gt; div &gt; div.h-91nvuq &gt; div &gt; button:nth-child(2) &gt; span'.</msg>
+<status status="PASS" starttime="20210929 12:28:22.412" endtime="20210929 12:28:22.457"/>
+</kw>
+<status status="PASS" starttime="20210929 12:28:22.411" endtime="20210929 12:28:22.457"/>
+</kw>
+<kw name="Buscar por alguma cidade turística (Ex: Buenos Aires, Florença, Orlando) e clicar em &quot;Pesquisar&quot;" library="hurb">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${SELECIONAR_CIDADE}</arg>
+<arg>Buenos Aires</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210929 12:28:22.459" level="INFO">Typing text 'Buenos Aires' into text field 'css=#downshift-1-input'.</msg>
+<status status="PASS" starttime="20210929 12:28:22.459" endtime="20210929 12:28:22.559"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICAR_PESQUISAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210929 12:28:22.559" level="INFO">Clicking element 'css=#__next &gt; div.Header_Header__1jiZz &gt; div.hrc-2LOsj &gt; div &gt; div &gt; div.hrc-2_yd0.hrc-SLIuR &gt; button &gt; span'.</msg>
+<status status="PASS" starttime="20210929 12:28:22.559" endtime="20210929 12:28:24.904"/>
+</kw>
+<status status="PASS" starttime="20210929 12:28:22.458" endtime="20210929 12:28:24.904"/>
+</kw>
+<kw name="Selecionar um pacote de viagem" library="hurb">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SELECIONAR_PACOTE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210929 12:28:24.905" level="INFO">Clicking element 'css=#__next &gt; div &gt; main &gt; div.ResultsCardsContainer_ResultsCardContainer__1jtiB &gt; a:nth-child(1) &gt; div.hrc-3-0W1 &gt; img'.</msg>
+<status status="PASS" starttime="20210929 12:28:24.905" endtime="20210929 12:28:24.998"/>
+</kw>
+<status status="PASS" starttime="20210929 12:28:24.905" endtime="20210929 12:28:24.999"/>
+</kw>
+<kw name="Clicar em &quot;ESCOLHER OPÇÃO&quot;" library="hurb">
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20210929 12:28:25.000" endtime="20210929 12:28:25.009"/>
+</kw>
+<status status="PASS" starttime="20210929 12:28:24.999" endtime="20210929 12:28:25.010"/>
+</kw>
+<kw name="Escolher uma opção de viagem e clicar em &quot;COMPRAR&quot;" library="hurb">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICAR_COMPRAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210929 12:28:25.011" level="INFO">Clicking element 'css=#offer-options &gt; div.offer-options--items &gt; div:nth-child(4) &gt; div.row.flex &gt; div.col-xs-12.col-sm-4.col-md-4.offer-options--box-right.main-package &gt; div &gt; div.col-xs-12.col-sm-7.col-md-7.offer-options--box.offer-options--box-price.flex &gt; div:nth-child(2) &gt; div:nth-child(4) &gt; a'.</msg>
+<status status="PASS" starttime="20210929 12:28:25.010" endtime="20210929 12:28:30.423"/>
+</kw>
+<status status="PASS" starttime="20210929 12:28:25.010" endtime="20210929 12:28:30.423"/>
+</kw>
+<kw name="Selecionar a opção &quot;Boleto parcelado&quot;" library="hurb">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CLICAR_BOLETO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210929 12:28:30.425" level="INFO">Clicking element 'css=#ui-id-1'.</msg>
+<status status="PASS" starttime="20210929 12:28:30.425" endtime="20210929 12:28:30.637"/>
+</kw>
+<status status="PASS" starttime="20210929 12:28:30.424" endtime="20210929 12:28:30.638"/>
+</kw>
+<kw name="Marcar o checkbox &quot;Li e aceito as condições de termos de uso e política de privacidade&quot;" library="hurb">
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>${CLICAR_POLITICA_PRIVACIDADE}</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20210929 12:28:30.640" level="INFO">Selecting checkbox 'css=#cancellation-policy'.</msg>
+<status status="PASS" starttime="20210929 12:28:30.639" endtime="20210929 12:28:30.871"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210929 12:28:30.871" endtime="20210929 12:28:32.982"/>
+</kw>
+<status status="PASS" starttime="20210929 12:28:30.639" endtime="20210929 12:28:32.982"/>
+</kw>
+<status status="PASS" starttime="20210929 12:28:14.130" endtime="20210929 12:28:32.983"/>
+</test>
+<status status="PASS" starttime="20210929 12:28:13.950" endtime="20210929 12:28:32.984"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Hurb">Hurb</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

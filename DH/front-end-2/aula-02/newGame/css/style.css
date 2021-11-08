@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Besley', serif; */
+    font-family: 'Press Start 2P', sans-serif;
+
+}
+
+body {
+    background-image: url('background.jpg'); 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    
+    justify-items: center;
+    align-items: center;
+
+    justify-content: space-evenly;
+    align-content: space-evenly;
+
+    width: 100vw;
+    height: 100vh;
+    
+    background-color: #000000b9;
+
+}
+
+.container p {
+    color: whitesmoke;
+}
+
+h1 {
+    color: whitesmoke;
+}
+
+
+button {
+    font-weight: bold;
+    padding: 1.3rem 2rem;
+    margin: 3.2rem;
+    background: #547b8d;
+    color: whitesmoke;
+
+    border: 4px solid whitesmoke;
+    border-radius: 1rem;
+    
+}
+
+button:hover {
+    background: #1e475a;
+    color: yellow;
+    padding: 3rem;
+    transition: 0.6s all ease-in-out;
+}
+
+button:active {
+    transition: 0.1s;
+    padding: 2.5rem;
+}
+
+.display {
+    width: 40vw;
+    height: 15vh;
+    padding-top: 0.8rem;
+    border: solid 3px whitesmoke;
+    border-radius: 1rem;
+}
+
+.display h3 {
+    color: whitesmoke;
+    text-align: center;
+
+}
+
+.resultado {
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+
+}
+
+
+.rounds {
+    width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: whitesmoke;
+}
+
+.rounds h3 {
+    margin: 1rem;
+}

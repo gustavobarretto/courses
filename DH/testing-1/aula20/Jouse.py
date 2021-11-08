@@ -1,0 +1,16 @@
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.get('http://jouse.com.br')
+
+BOTAO_COMPRE_AGORA = driver.find_element_by_css_selector("#next > main > div > section:nth-child(2) > div.jss44 > div:nth-child(2) > a").click()
+CARTEIRA_BRANCA = driver.find_element_by_css_selector("#next > main > div > div.jss72 > div.jss65 > div:nth-child(2) > div:nth-child(2) > div").click()
+ACABAMENTO_ROSE = driver.find_element_by_css_selector("#next > main > div > div.jss72 > div.jss65 > div:nth-child(3) > div:nth-child(3) > div").click()
+BOTAO_SELECIONAR = driver.find_element_by_css_selector("#next > main > div > div.jss72 > div.jss65 > div.jss71 > div.jss74 > button > span").click()
+driver.implicitly_wait(2)
+BOTAO_CONFIRMAR = driver.find_element_by_css_selector("#next > main > div > div > div.jss173 > div.jss161 > div.jss162 > a > button > span").click()
+CAMPO_NOME = driver.find_element_by_css_selector("#component-outlined-Nome").send_keys("Tiago")
+CAMPO_SOBRENOME = driver.find_element_by_css_selector("#component-outlined-Sobrenome").send_keys("Gomes")
+CAMPO_CPF = driver.find_element_by_css_selector("#component-outlined-CPF").send_keys("883.493.430-01")
+CAMPO_EMAIL = driver.find_element_by_css_selector("#component-outlined-E-mail").send_keys("tiago@qualidade.software")
+print('PASS')
+driver.quit()

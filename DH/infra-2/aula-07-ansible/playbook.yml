@@ -1,0 +1,40 @@
+---
+- hosts: localhost
+  tarefas:
+  - nome: Criar grupo de segurança com HTTPS, HTTP e SSH
+    ec2_group:
+      nome: digitalhouse
+      vpc_id: vpc-0fa692a3c7d0583c8
+      descrição: sg com as regras
+      região: us-west-1
+      regras:
+        - pquebrado: tcp
+          portas:
+          - 443
+          - 80
+          - 22
+          cidr_ip: 0.0.0.0/0
+          rule_desc: Aceito todo o tráfego nas portas 443, 80 e 22
+
+- nome: Criamos nosso servidor
+  ec2:
+    região: us-west-1
+    grupo: digitalhouse
+    instance_type: t2.micro
+    imagem: ami-0ed05376b59b90e46
+    espera: sim
+    wait_timeout: 500
+    volumes:
+      - device_name: / dev / xvda
+        volume_type: gp2
+        volume_size: 8
+    vpc_subnet_id: subnet-070d3b818d23ea3cf
+    assign_public_ip: sim
+    key_name: digitalhouse
+  registrar: info
+- nome: IP público do nosso servidor
+depurar:
+var: info.instances [0] .public_ip
+- nome: DNS público de nosso servidor
+  depurar:
+    var: info.instances [0] .public_dns_name

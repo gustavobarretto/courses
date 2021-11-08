@@ -1,0 +1,50 @@
+#titulo1 {
+    font-size: 60px;
+    color:red;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#subtitulo1 {
+    font-size: 40px;
+    color: red;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.links {
+    color:chocolate;
+    text-decoration: double;
+    text-decoration: underline;
+}
+
+#titulo2 {
+    font-size: 45px;
+    color:aqua;
+    text-align: right;
+    text-decoration: line-through;
+}
+
+p {
+    text-align: justify;
+    font-size: 11px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1 {
+    text-transform: capitalize;
+}
+
+h2 {
+    text-align: center;
+}
+
+#but-emergencia {
+    color: blue;
+    background-color: black;
+}
+
+#menu {
+    text-align: center;
+    background-color: yellow;
+}
