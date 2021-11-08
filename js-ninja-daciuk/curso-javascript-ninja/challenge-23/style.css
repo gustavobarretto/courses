@@ -1,0 +1,72 @@
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.calculator {
+  background-color: yellow;
+  width: 30rem;
+  height: 40rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+      "display display display display"
+      "ce c del divisor"
+      "sete oito nove multi"
+      "quatro cinco seis subt"
+      "um dois tres soma"
+      ". zero virg result"
+      ;
+
+  gap: 0px;
+}
+
+.display {
+  grid-area: display;
+  background-color: lightgray;
+  margin: 20px 10px 0 10px;
+  display: flex;
+  justify-content: end;
+
+
+}
+
+.display input {
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  text-align: right;
+  width: 100vw;
+  font-weight: 700;
+  font-size: large;
+
+}
+
+.zero {
+  grid-area: zero;
+}
+
+.virg {
+  grid-area: virg;
+}
+
+.result {
+  grid-area: result;
+}
+
+button {
+  margin: 8px;
+  font-size: large;
+}
