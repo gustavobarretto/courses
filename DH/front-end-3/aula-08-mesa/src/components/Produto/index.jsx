@@ -3,22 +3,56 @@ import { Component } from 'react';
 export default class Produtos extends Component {
   constructor() {
     super();
+
+    const listaInicial = [
+      {
+        id: 1,
+        imgProduto: "https://static.paodeacucar.com/img/uploads/1/828/528828.jpg",
+        nomeProduto: "Feijão"
+      },
+      {
+        id: 2,
+        imgProduto: "https://static.paodeacucar.com/img/uploads/1/828/528828.jpg",
+        nomeProduto: "Arroz"
+      },
+      {
+        id: 3,
+        imgProduto: "https://static.paodeacucar.com/img/uploads/1/828/528828.jpg",
+        nomeProduto: "Tomate"
+      },
+      {
+        id: 4,
+        imgProduto: "https://static.paodeacucar.com/img/uploads/1/828/528828.jpg",
+        nomeProduto: "Alface"
+      },
+      {
+        id: 5,
+        imgProduto: "https://static.paodeacucar.com/img/uploads/1/828/528828.jpg",
+        nomeProduto: "Lima"
+      },
+      {
+        id: 6,
+        imgProduto: "https://static.paodeacucar.com/img/uploads/1/828/528828.jpg",
+        nomeProduto: "Polenta"
+      },
+      {
+        id: 7,
+        imgProduto: "https://static.paodeacucar.com/img/uploads/1/828/528828.jpg",
+        nomeProduto: "Leite moça"
+      }
+    ]
+
     this.state = {
-      listagemDeProdutos: (function listandoProdutos() {
-          const criandoProduto = (url, nome, key) => {
-              return {
-                  id: key,
-                  imgProduto: url,
-                  nomeProduto: nome
-              }
-          }
-          return [
-            criandoProduto("https://static.paodeacucar.com/img/uploads/1/828/528828.jpg" , "Feijao", 1),
-            criandoProduto("https://static.paodeacucar.com/img/uploads/1/828/528828.jpg" , "Arroz", 2),
-            criandoProduto("https://static.paodeacucar.com/img/uploads/1/828/528828.jpg" , "Alface", 3)
-          ]
-      })(),
-    };
+      listagemDeProdutos: listaInicial,
+      listaPadrão: listaInicial
+    }
+
+  }
+
+  restaurarLista = () => {
+    return this.setState( {
+      listagemDeProdutos: this.state.listaPadrão
+    })
   }
 
   removeProduto = (idProduto) => {
@@ -37,6 +71,7 @@ export default class Produtos extends Component {
       <>
         {/* Incremental */}
         <div className='d-flex flex-wrap flex-column justify-content-center align-items-center py-3 my-4'>
+        <button onClick={this.restaurarLista}>Restaurar Lista</button>
           {this.state.listagemDeProdutos.map(({ id, imgProduto, nomeProduto }) => {
             return (
               <div key={id} onClick={() => this.removeProduto(id)}>
