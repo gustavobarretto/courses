@@ -36,7 +36,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
             statement.close();
             conexao.close();
             } catch (SQLException e) {
-            log.error("Erro de banco de dados")
+            log.error("Erro de banco de dados");
             e.printStackTrace();
         }
         return paciente;
