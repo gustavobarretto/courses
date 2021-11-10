@@ -2,12 +2,18 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Paciente</title>
+    <title>Clínica</title>
 </head>
 <body>
-<td>Olá paciente</td>
+<!--Aqui tem um IF entre paciente e dentista-->
+<td>Olá, </td>
+<td th:if=""> paciente</td>
+<td th:unless=""> dentista</td>
 <td th:text="${nome}"></td>
 <td th:text="${sobrenome}"></td>
+<!-- A tag inteira é um if-->
+
+
 
 </body>
 </html>
