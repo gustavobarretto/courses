@@ -2,13 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Paciente</title>
+    <title>Dentista</title>
 </head>
 <body>
-<td>Olá, paciente</td>
+
+<td>Olá, dentista</td>
 <td th:text="${nome}"></td>
 <td th:text="${sobrenome}"></td>
-
-
+<td> responsável pelo(a) paciente </td>
+<td th:text="${paciente}"></td>
 </body>
 </html>

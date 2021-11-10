@@ -19,8 +19,9 @@ public class PacienteController {
     @GetMapping("/buscaPorEmail")
     public String buscarPorEmail(Model model){
         Paciente paciente = pacienteService.buscarPorEmail("neideblanco@email.com");
+        model.addAttribute("condition", "P");
         model.addAttribute("nome", paciente.getNome());
         model.addAttribute("sobrenome", paciente.getSobrenome());
-        return "index";
+        return "paciente";
     }
 }

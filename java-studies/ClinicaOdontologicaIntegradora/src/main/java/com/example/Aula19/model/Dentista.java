@@ -8,14 +8,15 @@ public class Dentista {
     private String nome;
     private String sobrenome;
     private String matricula;
-    private List<Paciente> listaPacientes;
+    private Paciente paciente;
 
-    public Dentista(Integer id, String nome, String sobrenome, String matricula, List<Paciente> listaPacientes) {
+    public Dentista(Integer id, String nome, String sobrenome, String matricula, Paciente paciente) {
         this.id = id;
         this.nome = nome;
         this.sobrenome = sobrenome;
         this.matricula = matricula;
-        this.listaPacientes = listaPacientes;
+        this.paciente = paciente;
+
     }
 
     public Integer getId() {
@@ -50,11 +51,8 @@ public class Dentista {
         this.matricula = matricula;
     }
 
-    public List<Paciente> getListaPacientes() {
-        return listaPacientes;
+    public Paciente getPaciente() {
+        return this.paciente;
     }
 
-    public void setListaPacientes(List<Paciente> listaPacientes) {
-        this.listaPacientes = listaPacientes;
-    }
 }
