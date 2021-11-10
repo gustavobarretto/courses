@@ -1,0 +1,6 @@
+dao\configuration\ConfigJDBC.class
+AppOdonto.class
+model\Paciente.class
+dao\IDao.class
+dao\impl\PacienteDaoH2.class
+model\Endereco.class
