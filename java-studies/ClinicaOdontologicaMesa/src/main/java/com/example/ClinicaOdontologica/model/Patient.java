@@ -19,6 +19,15 @@ public class Patient {
         this.address = address;
     }
 
+    public Patient(String name, String surname, String email, String cpf, String register_date, Address address) {
+        this.name = name;
+        this.surname = surname;
+        this.email = email;
+        this.cpf = cpf;
+        this.register_date = register_date;
+        this.address = address;
+    }
+
     public Integer getId() {
         return id;
     }

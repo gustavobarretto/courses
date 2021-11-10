@@ -2,6 +2,7 @@ package com.example.ClinicaOdontologica.model;
 
 public class Address {
 
+    private Integer id;
     private String street;
     private String door_number;
     private String city;
@@ -12,6 +13,22 @@ public class Address {
         this.door_number = door_number;
         this.city = city;
         this.state = state;
+    }
+
+    public Address(Integer id, String street, String door_number, String city, String state) {
+        this.id = id;
+        this.street = street;
+        this.door_number = door_number;
+        this.city = city;
+        this.state = state;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getStreet() {

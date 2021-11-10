@@ -18,7 +18,22 @@ public class PatientDao implements IDao<Patient> {
     public Patient save(Patient patient) {
         Connection connection = cfgJDBC.database_connection();
         Statement statement = null;
-        String
+        String query = String.format("" +
+                "INSERT INTO PATIENTS(name, surname, email, cpf, register_date, address_id)" +
+                "VALUES('%s', '%s', '%s', '%s', '%s', '%s')",
+                patient.getName(),
+                patient.getSurname(),
+                patient.getEmail(),
+                patient.getCpf(),
+                patient.getRegister_date(),
+                patient.getAddress().getId());
+
+        try {
+            statement = connection.createStatement();
+            statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+            
+        }
+
 
 
         return null;
@@ -30,7 +45,7 @@ public class PatientDao implements IDao<Patient> {
     }
 
     @Override
-    public Patient read(String email) {
+    public Patient search(String email) {
         return null;
     }
 }

@@ -1,24 +1,23 @@
 package com.example.ClinicaOdontologica.dao.impl;
 
 import com.example.ClinicaOdontologica.dao.IDao;
-import com.example.ClinicaOdontologica.model.Address;
+import com.example.ClinicaOdontologica.model.Dentist;
 
 import java.util.List;
 
-public class AddressDao implements IDao<Address> {
-
+public class DentistDaoImpl implements IDao<Dentist> {
     @Override
-    public Address save(Address address) {
+    public Dentist save(Dentist dentist) {
         return null;
     }
 
     @Override
-    public List<Address> searchAll() {
+    public List<Dentist> searchAll() {
         return null;
     }
 
     @Override
-    public Address search(String email) {
+    public Dentist search(String email) {
         return null;
     }
 }
