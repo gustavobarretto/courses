@@ -10,6 +10,14 @@ public class cfgJDBC {
     private String userName;
     private String password;
 
+    private static final String SQL_CREATING_TABLE_PATIENTS = "" +
+            "DROP TABLE IF EXISTS PATIENTS;" +
+            "CREATE TABLE PATIENTS" +
+            "(id int AUTO_INCREMENT PRIMARY KEY NOT NULL," +
+            "";
+    private static final String SQL_CREATING_TABLE_ADDRESSES = "";
+    private static final String SQL_CREATING_TABLE_DENTISTS = "";
+
     public cfgJDBC(String jdbcDriver, String dbURL, String userName, String password) {
         this.jdbcDriver = jdbcDriver;
         this.dbURL = dbURL;
