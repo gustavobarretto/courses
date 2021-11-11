@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edu é lindo</title>
+</head>
+<body>
+<div th:switch="${condition}">
+    <td>Olá, </td>
+    <td th:case="'P'"> paciente</td>
+    <td th:case="'D'"> dentista</td>
+    <td th:text="${nome.getNome()}"></td>
+    <td th:text="${sobrenome.getSobrenome()}"></td>
+        <div th:switch="${condition}">
+            <td>Matrícula: </td>
+            <td th:case="'D'" th:text="${matricula.getMatricula()}"></td>
+        </div>
+        <div th:switch="${condition}">
+            <td>Paciente: </td>
+            <td th:case="'D'" th:text="${paciente.getPaciente().getNome()}"></td>
+        </div>
+</div>
+</body>
+</html>
