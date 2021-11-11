@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.css">
     <title>Dia 3</title>
   </head>
   <body>
@@ -12,13 +13,27 @@
       <input data-js="name_input" type="text" name="" id="">
     </form>
 
-    <form action="">
-      <label for="img">Imagem</label><input type="text">
-      <label for="marca_modelo">Marca/Modelo</label><input type="text">
-      <label for="ano">Ano</label><input type="text">
-      <label for="placa">Placa</label><input type="text">
-      <label for="Cor">Cor</label><input type="text">
+    <form name="car_registration" action="">
+      <label for="img">Imagem</label><input name="img" type="text">
+      <label for="brand_model">Marca/Modelo</label><input name="brand_model" type="text">
+      <label for="year">Ano</label><input name="year" type="text">
+      <label for="plate">Placa</label><input name="plate" type="text">
+      <label for="color">Cor</label><input name="color" type="text">
+      <button type="submit">Cadastrar</button>
     </form>
+    <table class="cars_table" data-js="cars_table">
+      <tr data-js="cars_table_columns">
+        <th>Image</th>
+        <th>Brand/Model</th>
+        <th>Year</th>
+        <th>Plate</th>
+        <th>Color</th>
+      </tr>
+      
+
+
+    </table>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
