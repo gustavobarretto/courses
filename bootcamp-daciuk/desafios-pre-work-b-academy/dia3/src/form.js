@@ -37,17 +37,15 @@ const colorsBox = document.querySelector('[data-js="colors-box"]');
 
 const creationBox = (selected, color) => {
   if(selected) {
-    return colorsBox.innerHTML +=
+    colorsBox.innerHTML +=
     `
       <div style="width:100px; height:100px; background-color: ${color}"></div>
     `
-  } else {
-
   }
-
 }
 
 colorsChosed.addEventListener('change', (e) => {
+  colorsBox.innerHTML = '';
 
   const divArray = [...e.target.options].map(option => {
     return {value: option.value,
@@ -56,7 +54,6 @@ colorsChosed.addEventListener('change', (e) => {
   })
 
   divArray.map(boxColors => {
-    console.log(boxColors)
     creationBox(boxColors.selected, boxColors.value)
   })
 })
