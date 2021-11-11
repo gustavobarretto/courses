@@ -44,4 +44,17 @@ public class PacienteServiceImpl implements PacienteService {
         pacienteMap.remove(id);
 
     }
+
+    @Override
+    public Paciente buscarPorId(Integer id) {
+        return pacienteMap.get(id);
+    }
+
+    @Override
+    public Paciente atualizarPaciente(Integer id, String nome) {
+        Paciente paciente = buscarPorId(id);
+        paciente.setEmail(nome);
+
+        return paciente;
+    }
 }

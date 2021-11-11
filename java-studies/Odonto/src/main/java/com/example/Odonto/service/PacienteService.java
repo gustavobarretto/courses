@@ -8,4 +8,6 @@ public interface PacienteService {
     Paciente criarPaciente();
     Map<Integer, Paciente> buscarPacientes();
     void deletar(Integer id);
+    Paciente buscarPorId(Integer id);
+    Paciente atualizarPaciente(Integer id, String nome);
 }

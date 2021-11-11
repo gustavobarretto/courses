@@ -31,4 +31,14 @@ public class PacienteController {
         return "Paciente deletado!";
     }
 
+    @GetMapping("buscar/{id}")
+    public Paciente buscarPorId(@PathVariable Integer id) {
+        return pacienteService.buscarPorId(id);
+    }
+
+    @GetMapping("atualizar/{id}/{nome}")
+    public Paciente atualizarPaciente(@PathVariable Integer id, @PathVariable String nome) {
+        return pacienteService.atualizarPaciente(id, nome);
+    }
+
 }
