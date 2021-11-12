@@ -7,6 +7,23 @@
     <title>Dia 4</title>
   </head>
   <body>
+    <form name="car_registration" action="">
+      <label for="img">Imagem</label><input name="img" type="text">
+      <label for="brand_model">Marca/Modelo</label><input name="brand_model" type="text">
+      <label for="year">Ano</label><input name="year" type="text">
+      <label for="plate">Placa</label><input name="plate" type="text">
+      <label for="color">Cor</label><input name="color" type="text">
+      <button type="submit">Cadastrar</button>
+    </form>
+    <table class="cars_table" data-js="cars_table">
+      <tr data-js="cars_table_columns">
+        <th>Image</th>
+        <th>Brand/Model</th>
+        <th>Year</th>
+        <th>Plate</th>
+        <th>Color</th>
+      </tr>
+    </table>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
