@@ -39,8 +39,8 @@ public class EnderecoServiceImpl implements OdontoService<Endereco> {
     }
 
     @Override
-    public Endereco atualizar(Endereco endereco) {
-        enderecoMap.put(endereco.getId(), endereco);
-        return endereco;
+    public Endereco atualizar(Integer id, Endereco endereco) {
+       enderecoMap.put(id, endereco);
+       return endereco;
     }
 }

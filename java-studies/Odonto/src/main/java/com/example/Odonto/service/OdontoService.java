@@ -9,5 +9,5 @@ public interface OdontoService<T> {
     Map<Integer, T> buscarTodos();
     void deletar(Integer id);
     T buscarPorId(Integer id);
-    T atualizar(T t);
+    T atualizar(Integer id, T t);
 }

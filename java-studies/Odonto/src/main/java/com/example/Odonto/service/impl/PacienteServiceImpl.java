@@ -52,9 +52,18 @@ public class PacienteServiceImpl implements OdontoService<Paciente> {
     }
 
     @Override
-    public Paciente atualizar(Paciente paciente) {
-        pacienteMap.put(paciente.getId(), paciente);
-        return paciente;
+    public Paciente atualizar(Integer id, Paciente paciente) {
+        Paciente pacienteAtualizado = pacienteMap.get(id);
 
+        Endereco enderecoNovo = enderecoService.atualizar(pacienteAtualizado.getIdEndereco(), paciente.getEndereco());
+        enderecoNovo.setId(pacienteAtualizado.getIdEndereco());
+
+        paciente.getEndereco().setId(enderecoNovo.getId());
+        paciente.setIdEndereco(pacienteAtualizado.getIdEndereco());
+        paciente.setId(pacienteAtualizado.getId());
+
+        pacienteMap.put(id, paciente);
+
+        return paciente;
     }
 }

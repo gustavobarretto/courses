@@ -27,26 +27,15 @@ public class PacienteController {
         return ResponseEntity.ok(pacienteService.buscarPorId(id));
     }
 
-    @GetMapping("deletar/{id}")
+    @DeleteMapping("/{id}")
     public String deletar(@PathVariable Integer id) {
         pacienteService.deletar(id);
         return "Paciente deletado!";
     }
 
-/*
-    @GetMapping("atualizar/{id}/{nome}/{sobrenome}/{email}/{idade}/{endereco}/{idEndereco}")
-    public Paciente atualizar(@PathVariable Integer id,
-                              @PathVariable String nome,
-                              @PathVariable String sobrenome,
-                              @PathVariable String email,
-                              @PathVariable String idade,
-                              @PathVariable String endereco,
-                              @PathVariable String idEndereco) {
-        Paciente paciente = new Paciente();
-        paciente.getId(id);
-
-        return pacienteService.atualizar(Paciente paciente);
+    @PutMapping("/{id}")
+    public ResponseEntity<Paciente> atualizarPut(@PathVariable Integer id, @RequestBody Paciente paciente) {
+        return ResponseEntity.ok(pacienteService.atualizar(id, paciente));
     }
-*/
 
 }

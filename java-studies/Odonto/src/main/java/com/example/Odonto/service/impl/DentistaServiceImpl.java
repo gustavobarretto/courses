@@ -37,7 +37,7 @@ public class DentistaServiceImpl implements OdontoService<Dentista> {
     }
 
     @Override
-    public Dentista atualizar(Dentista dentista) {
+    public Dentista atualizar(Integer id, Dentista dentista) {
         dentistaMap.put(dentista.getId(), dentista);
         return dentista;
     }
