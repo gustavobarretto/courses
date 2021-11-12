@@ -1,44 +1,52 @@
 package com.example.Odonto.controller;
 
 import com.example.Odonto.model.Paciente;
-import com.example.Odonto.service.PacienteService;
+import com.example.Odonto.service.OdontoService;
+import com.example.Odonto.service.impl.PacienteServiceImpl;
+import org.apache.coyote.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 
 @RestController
+@RequestMapping("/pacientes")
 public class PacienteController {
 
     @Autowired
-    private PacienteService pacienteService;
+    private PacienteServiceImpl pacienteService;
 
-    @GetMapping("criar")
-    public Paciente criarPaciente() {
-        return pacienteService.criarPaciente();
+    @PostMapping
+    public ResponseEntity<Paciente> salvarPaciente(@RequestBody Paciente paciente) {
+        return ResponseEntity.ok(pacienteService.salvar(paciente));
     }
 
-    @GetMapping("listar")
-    public Map<Integer, Paciente> listarPacientes() {
-        return pacienteService.buscarPacientes();
+    @GetMapping("/{id}")
+    public ResponseEntity<Paciente> buscarPorId(@PathVariable Integer id) {
+        return ResponseEntity.ok(pacienteService.buscarPorId(id));
     }
 
     @GetMapping("deletar/{id}")
-    public String deletarPaciente(@PathVariable Integer id) {
+    public String deletar(@PathVariable Integer id) {
         pacienteService.deletar(id);
         return "Paciente deletado!";
     }
 
-    @GetMapping("buscar/{id}")
-    public Paciente buscarPorId(@PathVariable Integer id) {
-        return pacienteService.buscarPorId(id);
-    }
+/*
+    @GetMapping("atualizar/{id}/{nome}/{sobrenome}/{email}/{idade}/{endereco}/{idEndereco}")
+    public Paciente atualizar(@PathVariable Integer id,
+                              @PathVariable String nome,
+                              @PathVariable String sobrenome,
+                              @PathVariable String email,
+                              @PathVariable String idade,
+                              @PathVariable String endereco,
+                              @PathVariable String idEndereco) {
+        Paciente paciente = new Paciente();
+        paciente.getId(id);
 
-    @GetMapping("atualizar/{id}/{nome}")
-    public Paciente atualizarPaciente(@PathVariable Integer id, @PathVariable String nome) {
-        return pacienteService.atualizarPaciente(id, nome);
+        return pacienteService.atualizar(Paciente paciente);
     }
+*/
 
 }

@@ -1,41 +1,35 @@
 package com.example.Odonto.service.impl;
 
+import com.example.Odonto.model.Endereco;
 import com.example.Odonto.model.Paciente;
-import com.example.Odonto.service.PacienteService;
+import com.example.Odonto.service.OdontoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
-import java.util.Random;
 
+@Primary
 @Service
-public class PacienteServiceImpl implements PacienteService {
+public class PacienteServiceImpl implements OdontoService<Paciente> {
     private static Map<Integer, Paciente> pacienteMap = new HashMap<>();
+    private static Integer idGlobal = 1;
 
-    private static String[] nomes = {"Lucas", "Ana", "Pedro", "Julia", "Roberto",
-            "Larissa", "Antonio", "Pietra", "Rubens", "Giovana"};
-
-    private static String[] sobrenomes = {"Silva", "Santos", "Gomes", "Paglia", "Grisa",
-            "Andrade", "Quinteiros", "Tempesta", "Franco", "Andrade"};
-
-
+    @Autowired
+    private EnderecoServiceImpl enderecoService;
 
     @Override
-    public Paciente criarPaciente() {
-        Random random = new Random();
-        int numRad = 10;
-        String nome = nomes[random.nextInt(numRad)];
-        String sobrenome = sobrenomes[random.nextInt(numRad)];
-        String email = nome.toLowerCase() + sobrenome.toLowerCase() + "@email.com";
-        Integer id = pacienteMap.size() + 1;
-        pacienteMap.put(id, new Paciente(nome, sobrenome, email, (random.nextInt(numRad) + 18)));
-
-        return pacienteMap.get(id);
+    public Paciente salvar(Paciente paciente) {
+        paciente.setIdEndereco(enderecoService.salvar(paciente.getEndereco()).getId());
+        paciente.setId(idGlobal);
+        pacienteMap.put(idGlobal, paciente);
+        idGlobal++;
+        return paciente;
     }
 
     @Override
-    public Map<Integer, Paciente> buscarPacientes() {
+    public Map<Integer, Paciente> buscarTodos() {
         return pacienteMap;
     }
 
@@ -47,14 +41,20 @@ public class PacienteServiceImpl implements PacienteService {
 
     @Override
     public Paciente buscarPorId(Integer id) {
-        return pacienteMap.get(id);
+        Paciente paciente = pacienteMap.get(id);
+        paciente.setEndereco(enderecoService.buscarPorId(paciente.getIdEndereco()));
+
+        Integer idEndereco = paciente.getIdEndereco();
+        Endereco endereco = enderecoService.buscarPorId(idEndereco);
+        paciente.setEndereco(endereco);
+
+        return paciente;
     }
 
     @Override
-    public Paciente atualizarPaciente(Integer id, String nome) {
-        Paciente paciente = buscarPorId(id);
-        paciente.setEmail(nome);
-
+    public Paciente atualizar(Paciente paciente) {
+        pacienteMap.put(paciente.getId(), paciente);
         return paciente;
+
     }
 }
