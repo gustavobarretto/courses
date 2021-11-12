@@ -35,6 +35,7 @@ public class PacienteServiceImpl implements OdontoService<Paciente> {
 
     @Override
     public void deletar(Integer id) {
+        enderecoService.deletar(id);
         pacienteMap.remove(id);
 
     }

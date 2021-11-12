@@ -1,10 +1,13 @@
 package com.example.Odonto.controller;
 
 import com.example.Odonto.model.Endereco;
+import com.example.Odonto.model.Paciente;
 import com.example.Odonto.service.impl.EnderecoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 @RequestMapping("/enderecos")
@@ -18,6 +21,11 @@ public class EnderecoController {
         return ResponseEntity.ok(enderecoService.salvar(endereco));
     }
 
+    @GetMapping
+    public ResponseEntity<Map<Integer, Endereco>> buscarTodos() {
+        return ResponseEntity.ok(enderecoService.buscarTodos());
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Endereco> buscarPorId(@PathVariable Integer id) {
         return ResponseEntity.ok(enderecoService.buscarPorId(id));
@@ -26,7 +34,7 @@ public class EnderecoController {
     @DeleteMapping("/{id}")
     public String deletar(@PathVariable Integer id) {
         enderecoService.deletar(id);
-        return "Paciente deletado!";
+        return "Endereço deletado!";
     }
 
     @PutMapping("/{id}")

@@ -22,6 +22,11 @@ public class PacienteController {
         return ResponseEntity.ok(pacienteService.salvar(paciente));
     }
 
+    @GetMapping
+    public ResponseEntity<Map<Integer, Paciente>> buscarTodos() {
+        return ResponseEntity.ok(pacienteService.buscarTodos());
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Paciente> buscarPorId(@PathVariable Integer id) {
         return ResponseEntity.ok(pacienteService.buscarPorId(id));
@@ -29,6 +34,7 @@ public class PacienteController {
 
     @DeleteMapping("/{id}")
     public String deletar(@PathVariable Integer id) {
+
         pacienteService.deletar(id);
         return "Paciente deletado!";
     }
