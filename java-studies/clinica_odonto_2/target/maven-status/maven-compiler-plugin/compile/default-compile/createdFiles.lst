@@ -1,0 +1,6 @@
+clinica\ClinicaOdonto.class
+clinica\model\Paciente.class
+clinica\dto\EnderecoDTO.class
+clinica\dto\PacienteDTO.class
+clinica\model\Endereco.class
+clinica\repository\IRepository.class
