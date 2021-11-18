@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/pacientes")
 public class PacienteController {
@@ -26,5 +28,21 @@ public class PacienteController {
             return ResponseEntity.ok(pacienteService.buscarPorId(id));
 
         return ResponseEntity.badRequest().body("Paciente não encontrado");
+    }
+
+    @GetMapping
+    public ResponseEntity<Map<Integer, Paciente>> buscarTodos() {
+        return ResponseEntity.ok(pacienteService.buscarTodos());
+    }
+
+    @DeleteMapping("/{id}")
+    public String deletarPaciente(@PathVariable Integer id) {
+        pacienteService.deletar(id);
+        return "Paciente deletado!";
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Paciente> atualizarPut(@PathVariable Integer id, @RequestBody Paciente paciente) {
+        return ResponseEntity.ok(pacienteService.atualizar(id, paciente));
     }
 }

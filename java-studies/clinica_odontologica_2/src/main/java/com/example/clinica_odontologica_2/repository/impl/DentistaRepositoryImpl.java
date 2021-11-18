@@ -28,4 +28,31 @@ public class DentistaRepositoryImpl implements IRepository<Dentista> {
         Dentista dentista = new Dentista(dentistaDTOMap.get(id));
         return dentista;
     }
+
+    @Override
+    public void deletar(Integer id) {
+        dentistaDTOMap.remove(id);
+    }
+
+    @Override
+    public Map<Integer, Dentista> buscarTodos() {
+        Map<Integer, Dentista> dentistaMap = new HashMap<>();
+
+        for (Map.Entry<Integer, DentistaDTO> entry : dentistaDTOMap.entrySet()) {
+            Dentista dentista = new Dentista(entry.getValue());
+            dentistaMap.put(dentista.getId(), dentista);
+        }
+        return dentistaMap;
+    }
+
+    @Override
+    public Dentista atualizar(Integer id, Dentista dentista) {
+        DentistaDTO dentistaDTO = dentistaDTOMap.get(id);
+        if(dentistaDTO == null)
+            return null;
+
+        dentista.setId(id);
+        dentistaDTOMap.put(id, new DentistaDTO(dentista));
+        return dentista;
+    }
 }

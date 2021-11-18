@@ -5,6 +5,8 @@ import com.example.clinica_odontologica_2.repository.impl.DentistaRepositoryImpl
 import com.example.clinica_odontologica_2.service.OdontoService;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 public class DentistaServiceImpl implements OdontoService<Dentista> {
     private DentistaRepositoryImpl dentistaRepository;
@@ -21,5 +23,20 @@ public class DentistaServiceImpl implements OdontoService<Dentista> {
     @Override
     public Dentista buscarPorId(Integer id) {
         return dentistaRepository.buscarPorId(id);
+    }
+
+    @Override
+    public void deletar(Integer id) {
+        dentistaRepository.deletar(id);
+    }
+
+    @Override
+    public Map<Integer, Dentista> buscarTodos() {
+        return dentistaRepository.buscarTodos();
+    }
+
+    @Override
+    public Dentista atualizar(Integer id, Dentista dentista) {
+        return dentistaRepository.atualizar(id, dentista);
     }
 }

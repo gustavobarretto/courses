@@ -8,21 +8,48 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EnderecoRepositoryImpl implements IRepository<Endereco> {
-    private static Map<Integer, EnderecoDTO> enderecoMap = new HashMap<>();
+    private static Map<Integer, EnderecoDTO> enderecoDTOMap = new HashMap<>();
     private static Integer idGlobal = 1;
 
     @Override
     public Endereco salvar(Endereco endereco) {
         endereco.setId(idGlobal);
         EnderecoDTO enderecoDTO = new EnderecoDTO(endereco);
-        enderecoMap.put(idGlobal, enderecoDTO);
+        enderecoDTOMap.put(idGlobal, enderecoDTO);
         idGlobal++;
         return endereco;
     }
 
     @Override
     public Endereco buscarPorId(Integer id) {
-        Endereco endereco = new Endereco(enderecoMap.get(id));
+        Endereco endereco = new Endereco(enderecoDTOMap.get(id));
+        return endereco;
+    }
+
+    @Override
+    public void deletar(Integer id) {
+        enderecoDTOMap.remove(id);
+    }
+
+    @Override
+    public Map<Integer, Endereco> buscarTodos() {
+        Map<Integer, Endereco> enderecoMap = new HashMap<>();
+
+        for (Map.Entry<Integer, EnderecoDTO> entry : enderecoDTOMap.entrySet()) {
+            Endereco endereco = new Endereco(entry.getValue());
+            enderecoMap.put(endereco.getId(), endereco);
+        }
+        return enderecoMap;
+    }
+
+    @Override
+    public Endereco atualizar(Integer id, Endereco endereco) {
+        EnderecoDTO enderecoDTO = enderecoDTOMap.get(id);
+        if(enderecoDTO == null)
+            return null;
+
+        endereco.setId(id);
+        enderecoDTOMap.put(id, new EnderecoDTO(endereco));
         return endereco;
     }
 }

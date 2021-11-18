@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("/dentistas")
 public class DentistaController {
@@ -16,17 +18,34 @@ public class DentistaController {
     private DentistaServiceImpl dentistaService;
 
     @PostMapping
-    public ResponseEntity<Dentista> salvarPaciente(@RequestBody Dentista dentista) {
+    public ResponseEntity<Dentista> salvarDentista(@RequestBody Dentista dentista) {
         return ResponseEntity.ok(dentistaService.salvar(dentista));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity buscarPacientePorId(@PathVariable Integer id) {
+    public ResponseEntity buscarDentistaPorId(@PathVariable Integer id) {
         Dentista dentista = dentistaService.buscarPorId(id);
 
         if(dentista != null)
             return ResponseEntity.ok(dentistaService.buscarPorId(id));
 
-        return ResponseEntity.badRequest().body("Paciente não encontrado");
+        return ResponseEntity.badRequest().body("Dentista não encontrado");
     }
+
+    @GetMapping
+    public ResponseEntity<Map<Integer, Dentista>> buscarTodos() {
+        return ResponseEntity.ok(dentistaService.buscarTodos());
+    }
+
+    @DeleteMapping("/{id}")
+    public String deletar(@PathVariable Integer id) {
+        dentistaService.deletar(id);
+        return "Dentista deletado!";
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Dentista> atualizar(@PathVariable Integer id, @RequestBody Dentista dentista) {
+        return ResponseEntity.ok(dentistaService.atualizar(id, dentista));
+    }
+
 }
