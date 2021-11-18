@@ -12,6 +12,8 @@ public class PacienteDTO {
     private String sobrenome;
     private Integer idEndereco;
 
+    public PacienteDTO () {}
+
     public PacienteDTO(Paciente paciente) {
         this.id = paciente.getId();
         this.nome = paciente.getNome();

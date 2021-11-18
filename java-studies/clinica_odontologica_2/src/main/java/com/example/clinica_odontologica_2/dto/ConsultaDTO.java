@@ -13,6 +13,8 @@ public class ConsultaDTO {
     private Integer idDentista;
     private Date dataHora;
 
+    public ConsultaDTO () {}
+
     public ConsultaDTO(Consulta consulta) {
         this.id = consulta.getId();
         this.idPaciente = consulta.getPaciente().getId();

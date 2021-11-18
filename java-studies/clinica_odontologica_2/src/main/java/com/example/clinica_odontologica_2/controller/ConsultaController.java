@@ -17,8 +17,11 @@ public class ConsultaController {
     private ConsultaServiceImpl consultaService;
 
     @PostMapping
-    public ResponseEntity<Consulta> salvarConsulta(@RequestBody Consulta consulta) {
-        return ResponseEntity.ok(consultaService.salvar(consulta));
+    public ResponseEntity salvarConsulta(@RequestBody Consulta consulta) {
+        Consulta consultaSalva = consultaService.salvar(consulta);
+        if(consultaSalva != null)
+            return ResponseEntity.ok(consultaService.salvar(consulta));
+        return ResponseEntity.badRequest().body("Paciente ou dentista não encontrado para a criação dessa consulta.");
     }
 
     @GetMapping("/{id}")

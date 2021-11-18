@@ -11,6 +11,8 @@ public class EnderecoDTO {
     private String rua;
     private String numero;
 
+    public EnderecoDTO () {}
+
     public EnderecoDTO(Endereco endereco) {
         this.id = endereco.getId();
         this.rua = endereco.getRua();

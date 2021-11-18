@@ -14,6 +14,8 @@ public class Consulta {
     private Dentista dentista;
     private Date dataHora;
 
+    public Consulta () {}
+
     public Consulta(ConsultaDTO consultaDTO, Paciente paciente, Dentista dentista) {
         this.id = consultaDTO.getId();
         this.paciente = paciente;

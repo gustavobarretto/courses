@@ -12,6 +12,8 @@ public class DentistaDTO {
     private String nome;
     private String sobrenome;
 
+    public DentistaDTO () {}
+
     public DentistaDTO(Dentista dentista) {
         this.id = dentista.getId();
         this.numMatricula = dentista.getNumMatricula();

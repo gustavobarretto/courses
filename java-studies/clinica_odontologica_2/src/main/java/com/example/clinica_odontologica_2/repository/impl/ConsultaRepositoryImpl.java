@@ -30,6 +30,7 @@ public class ConsultaRepositoryImpl implements IRepository<Consulta> {
 
     @Override
     public Consulta salvar(Consulta consulta) {
+        consulta.setId(idGlobal);
         Paciente paciente = pacienteRepository.buscarPorId(consulta.getPaciente().getId());
         if(paciente == null)
             return null;
@@ -38,7 +39,7 @@ public class ConsultaRepositoryImpl implements IRepository<Consulta> {
         if(dentista == null)
             return null;
 
-        consulta.setId(idGlobal);
+
         consulta.setPaciente(paciente);
         consulta.setDentista(dentista);
         ConsultaDTO consultaDTO = new ConsultaDTO(consulta);

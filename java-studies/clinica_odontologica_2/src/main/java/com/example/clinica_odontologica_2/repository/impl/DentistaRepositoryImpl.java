@@ -25,8 +25,10 @@ public class DentistaRepositoryImpl implements IRepository<Dentista> {
 
     @Override
     public Dentista buscarPorId(Integer id) {
-        Dentista dentista = new Dentista(dentistaDTOMap.get(id));
-        return dentista;
+        DentistaDTO dentistaDTO = dentistaDTOMap.get(id);
+        if(dentistaDTO != null)
+            return new Dentista(dentistaDTO);
+        return null;
     }
 
     @Override
