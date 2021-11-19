@@ -22,8 +22,10 @@ public class EnderecoRepositoryImpl implements IRepository<Endereco> {
 
     @Override
     public Endereco buscarPorId(Integer id) {
-        Endereco endereco = new Endereco(enderecoDTOMap.get(id));
-        return endereco;
+        EnderecoDTO enderecoDTO = enderecoDTOMap.get(id);
+        if(enderecoDTO != null)
+            return new Endereco(enderecoDTO);
+        return null;
     }
 
     @Override

@@ -47,6 +47,4 @@ public class ConsultaController {
     public ResponseEntity<Consulta> atualizar(@PathVariable Integer id, @RequestBody Consulta consulta) {
         return ResponseEntity.ok(consultaService.atualizar(id, consulta));
     }
-
-
 }

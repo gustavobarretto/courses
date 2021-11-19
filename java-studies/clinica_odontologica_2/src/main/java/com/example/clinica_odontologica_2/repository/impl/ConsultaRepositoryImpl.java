@@ -12,6 +12,7 @@ import java.lang.reflect.GenericDeclaration;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class ConsultaRepositoryImpl implements IRepository<Consulta> {
     private static Map<Integer, ConsultaDTO> consultaDTOMap = new HashMap<>();
     private Integer idGlobal =1;
