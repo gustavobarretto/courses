@@ -18,6 +18,7 @@ export default class App extends Component {
       try {
         const response = await axios.get(`http://viacep.com.br/ws/${cep}/json/`);
         this.setState({ endereco: response.data })
+        console.log(response.data)
       } catch (error) {
         Swal.fire( {
           title: 'Erro na busca!',
