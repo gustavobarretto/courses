@@ -1,4 +1,4 @@
-package com.example.Int9Aula28.persistence.entities;
+package com.example.Int9Aula28.persistence.Entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -8,7 +8,8 @@ import javax.persistence.*;
 @Entity
 @Setter
 @Getter
-@Table(name="PRODUCTS")
+
+@Table(name = "PRODUCTS")
 public class Product {
 
     @Id
