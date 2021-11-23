@@ -1,6 +1,6 @@
 package com.example.Clinic.entities;
 
-import com.example.Clinic.dto.PacientDTO;
+import com.example.Clinic.dto.PatientDTO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class Pacient {
+public class Patient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -26,12 +26,13 @@ public class Pacient {
     @JoinColumn(name = "address_id")
     private Address address;
 
-    public Pacient() {}
+    public Patient() {}
 
-    public Pacient(PacientDTO pacientDTO, Address address) {
+    public Patient(PatientDTO pacientDTO, Address address) {
         this.id = pacientDTO.getId();
         this.name = pacientDTO.getName();
         this.surname = pacientDTO.getSurname();
         this.address = address;
     }
+
 }
