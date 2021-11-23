@@ -1,6 +1,6 @@
 package com.example.Clinic.dto;
 
-import com.example.Clinic.entities.Dentist;
+import com.example.Clinic.persistence.entities.Dentist;
 import lombok.Getter;
 import lombok.Setter;
 

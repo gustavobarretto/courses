@@ -1,6 +1,6 @@
-package com.example.Clinic.repository;
+package com.example.Clinic.persistence.repository;
 
-import com.example.Clinic.entities.Address;
+import com.example.Clinic.persistence.entities.Address;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface IAddressRepository extends JpaRepository<Address, Integer> {

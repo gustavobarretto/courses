@@ -1,4 +1,4 @@
-package com.example.Clinic.entities;
+package com.example.Clinic.persistence.entities;
 
 import com.example.Clinic.dto.PatientDTO;
 import lombok.Getter;

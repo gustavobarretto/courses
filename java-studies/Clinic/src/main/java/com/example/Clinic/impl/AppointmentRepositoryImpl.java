@@ -1,4 +1,4 @@
-package com.example.Clinic.repository.impl;
+package com.example.Clinic.impl;
 
 public class AppointmentRepositoryImpl {
 }

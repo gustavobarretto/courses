@@ -1,8 +1,8 @@
-package com.example.Clinic.repository.impl;
+package com.example.Clinic.impl;
 
 import com.example.Clinic.dto.PatientDTO;
-import com.example.Clinic.entities.Patient;
-import com.example.Clinic.repository.IPatientRepository;
+import com.example.Clinic.persistence.entities.Patient;
+import com.example.Clinic.persistence.repository.IPatientRepository;
 
 import java.util.HashMap;
 import java.util.List;
@@ -18,33 +18,33 @@ public class PatientRepositoryImpl {
         addressRepositoryImpl = new AddressRepositoryImpl();
     }
 
-    public Patient save(Patient patient) {
-        patient.setAddress(addressRepositoryImpl.save(patient.getAddress()));
+    public Patient savePatient(Patient patient) {
+        patient.setAddress(addressRepositoryImpl.saveAddress(patient.getAddress()));
         Patient patientSaved = iPatientRepository.save(patient);
         PatientDTO patientDTO = new PatientDTO(patientSaved);
         patientDTOMap.put(patientDTO.getId(), patientDTO);
         return patientSaved;
     }
 
-    public Patient searchById(Integer id) {
+    public Patient searchPatientById(Integer id) {
 
         Patient patientSearched = iPatientRepository.getById(id);
         PatientDTO patientDTO = patientDTOMap.get(patientSearched.getId());
         if(patientDTO != null)
-            return new Patient(patientDTO, addressRepositoryImpl.searchById(patientDTO.getAddressId()));
+            return new Patient(patientDTO, addressRepositoryImpl.searchAddressById(patientDTO.getAddress_id()));
         return null;
     }
 
-    public List<Patient> findAll() {
+    public List<Patient> findAllPatients() {
         return iPatientRepository.findAll();
     }
 
-    public void deleteById(Integer id) {
+    public void deletePatientById(Integer id) {
         iPatientRepository.deleteById(id);
         patientDTOMap.remove(id);
     }
 
- Patient update(Patient patient) {
+    public Patient updatePatient(Patient patient) {
         return null;
     }
 
