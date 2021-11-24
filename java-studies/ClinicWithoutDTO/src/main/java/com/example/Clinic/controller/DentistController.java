@@ -1,7 +1,7 @@
 package com.example.Clinic.controller;
 
 import com.example.Clinic.persistence.entities.Dentist;
-import com.example.Clinic.services.impl.DentistService;
+import com.example.Clinic.services.impl.DentistServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.List;
 public class DentistController {
 
     @Autowired
-    private DentistService dentistService;
+    private DentistServiceImpl dentistService;
 
     @PostMapping("/save")
     public ResponseEntity<Dentist> dentistSave(@RequestBody Dentist dentist) {

@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PatientService implements IClinicServices<Patient> {
+public class PatientServiceImpl implements IClinicServices<Patient> {
 
     @Autowired
     private IPatientRepository patientRepository;
     @Autowired
-    private AddressService addressService;
+    private AddressServiceImpl addressService;
 
     @Override
     public Patient save(Patient patient) {

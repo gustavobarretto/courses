@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class AddressService implements IClinicServices<Address> {
+public class AddressServiceImpl implements IClinicServices<Address> {
 
     @Autowired
     private IAddressRepository addressRepository;

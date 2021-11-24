@@ -10,7 +10,7 @@ import java.util.List;
 
 
 @Service
-public class DentistService implements IClinicServices<Dentist> {
+public class DentistServiceImpl implements IClinicServices<Dentist> {
 
     @Autowired
     private IDentistRepository dentistRepository;

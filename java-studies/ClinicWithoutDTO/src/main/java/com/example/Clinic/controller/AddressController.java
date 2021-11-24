@@ -1,7 +1,7 @@
 package com.example.Clinic.controller;
 
 import com.example.Clinic.persistence.entities.Address;
-import com.example.Clinic.services.impl.AddressService;
+import com.example.Clinic.services.impl.AddressServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,7 @@ import java.util.List;
 public class AddressController {
 
     @Autowired
-    private AddressService addressService;
+    private AddressServiceImpl addressService;
 
     @PostMapping("/save")
     public ResponseEntity<Address> saveAddress(@RequestBody Address address) {
