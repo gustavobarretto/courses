@@ -1,5 +1,6 @@
 package com.example.Clinic.persistence.entities;
 
+import com.example.Clinic.dto.AddressDTO;
 import com.example.Clinic.dto.PatientDTO;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
+@Table(name = "patient")
 public class Patient {
 
     @Id
@@ -28,11 +30,11 @@ public class Patient {
 
     public Patient() {}
 
-    public Patient(PatientDTO pacientDTO, Address address) {
+    public Patient(PatientDTO pacientDTO, AddressDTO addressDTO) {
         this.id = pacientDTO.getId();
         this.name = pacientDTO.getName();
         this.surname = pacientDTO.getSurname();
-        this.address = address;
+        this.address = addressDTO.toEntity();
     }
 
 }

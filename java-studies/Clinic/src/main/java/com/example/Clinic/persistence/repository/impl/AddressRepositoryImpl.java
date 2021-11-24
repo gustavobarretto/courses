@@ -1,17 +1,26 @@
-package com.example.Clinic.impl;
+package com.example.Clinic.persistence.repository.impl;
 
 import com.example.Clinic.dto.AddressDTO;
 import com.example.Clinic.persistence.entities.Address;
 import com.example.Clinic.persistence.repository.IAddressRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public class AddressRepositoryImpl {
     private static Map<Integer, AddressDTO> addressDTOMap = new HashMap<>();
 
+    @Autowired
     private IAddressRepository iAddressRepository;
+
+    public AddressRepositoryImpl(IAddressRepository iAddressRepository) {
+        this.iAddressRepository = iAddressRepository;
+
+    }
 
     public Address saveAddress(Address address) {
         Address addressSaved = iAddressRepository.save(address);

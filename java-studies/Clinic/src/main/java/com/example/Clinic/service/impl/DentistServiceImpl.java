@@ -1,7 +1,7 @@
 package com.example.Clinic.service.impl;
 
 import com.example.Clinic.persistence.entities.Dentist;
-import com.example.Clinic.impl.DentistRepositoryImpl;
+import com.example.Clinic.persistence.repository.impl.DentistRepositoryImpl;
 import com.example.Clinic.service.IClinicService;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +34,7 @@ public class DentistServiceImpl implements IClinicService<Dentist> {
     }
 
     @Override
-    public Dentist update(Dentist dentist) {
+    public Dentist update(Integer id, Dentist dentist) {
         return dentistRepository.updateDentist(dentist);
     }
 }

@@ -1,8 +1,9 @@
 package com.example.Clinic.service.impl;
 
 import com.example.Clinic.persistence.entities.Address;
-import com.example.Clinic.impl.AddressRepositoryImpl;
+import com.example.Clinic.persistence.repository.impl.AddressRepositoryImpl;
 import com.example.Clinic.service.IClinicService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 @Service
 public class AddressServiceImpl implements IClinicService<Address> {
 
+    @Autowired
     private AddressRepositoryImpl addressRepository;
 
     @Override
@@ -33,7 +35,7 @@ public class AddressServiceImpl implements IClinicService<Address> {
     }
 
     @Override
-    public Address update(Address address) {
+    public Address update(Integer id, Address address) {
         return addressRepository.updateAddress(address);
     }
 }

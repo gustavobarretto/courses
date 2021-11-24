@@ -20,5 +20,4 @@ public class PatientDTO {
         this.surname = pacient.getSurname();
         this.address_id = pacient.getAddress().getId();
     }
-
 }

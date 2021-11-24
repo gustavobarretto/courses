@@ -1,13 +1,15 @@
-package com.example.Clinic.impl;
+package com.example.Clinic.persistence.repository.impl;
 
 import com.example.Clinic.dto.DentistDTO;
 import com.example.Clinic.persistence.entities.Dentist;
 import com.example.Clinic.persistence.repository.IDentistRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public class DentistRepositoryImpl {
     private static Map<Integer, DentistDTO> dentistDTOMap = new HashMap<>();
 

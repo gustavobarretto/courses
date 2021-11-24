@@ -7,7 +7,7 @@ public interface IClinicService <T> {
     T findById(Integer id);
     List<T> searchAll();
     void delete(Integer id);
-    T update(T t);
+    T update(Integer id, T t);
 
 
 }

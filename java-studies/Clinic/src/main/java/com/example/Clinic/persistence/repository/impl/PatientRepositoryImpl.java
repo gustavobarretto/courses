@@ -1,21 +1,27 @@
-package com.example.Clinic.impl;
+package com.example.Clinic.persistence.repository.impl;
 
 import com.example.Clinic.dto.PatientDTO;
 import com.example.Clinic.persistence.entities.Patient;
 import com.example.Clinic.persistence.repository.IPatientRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public class PatientRepositoryImpl {
     private static Map<Integer, PatientDTO> patientDTOMap = new HashMap<>();
 
+    @Autowired
     private AddressRepositoryImpl addressRepositoryImpl;
+
+    @Autowired
     private IPatientRepository iPatientRepository;
 
-    public PatientRepositoryImpl() {
-        addressRepositoryImpl = new AddressRepositoryImpl();
+    public PatientRepositoryImpl(IPatientRepository iPatientRepository) {
+        this.iPatientRepository = iPatientRepository;
     }
 
     public Patient savePatient(Patient patient) {
@@ -23,7 +29,7 @@ public class PatientRepositoryImpl {
         Patient patientSaved = iPatientRepository.save(patient);
         PatientDTO patientDTO = new PatientDTO(patientSaved);
         patientDTOMap.put(patientDTO.getId(), patientDTO);
-        return patientSaved;
+        return new Patient(patientDTO, addressRepositoryImpl.searchAddressById(patientDTO.getAddress_id()));
     }
 
     public Patient searchPatientById(Integer id) {

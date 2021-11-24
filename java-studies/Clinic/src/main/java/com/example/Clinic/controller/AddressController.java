@@ -16,7 +16,7 @@ public class AddressController {
     private AddressServiceImpl addressService;
 
     @PostMapping("/add")
-    public ResponseEntity<Address> saveAddress(Address address) {
+    public ResponseEntity<Address> saveAddress(@RequestBody Address address) {
         return ResponseEntity.ok(addressService.save(address));
     }
 
@@ -39,9 +39,9 @@ public class AddressController {
         return ResponseEntity.ok("Not Deleted");
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Address> updateAddress(Address address) {
-        return ResponseEntity.ok(addressService.update(address));
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Address> updateAddress(@RequestBody Address address, @PathVariable Integer id) {
+        return ResponseEntity.ok(addressService.update(id, address));
     }
 
 }
