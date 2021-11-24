@@ -30,11 +30,11 @@ public class Patient {
 
     public Patient() {}
 
-    public Patient(PatientDTO pacientDTO, AddressDTO addressDTO) {
-        this.id = pacientDTO.getId();
-        this.name = pacientDTO.getName();
-        this.surname = pacientDTO.getSurname();
-        this.address = addressDTO.toEntity();
+    public Patient(PatientDTO patientDTO, Address address) {
+        this.id = patientDTO.getId();
+        this.name = patientDTO.getName();
+        this.surname = patientDTO.getSurname();
+        this.address = address;
     }
 
 }

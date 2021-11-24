@@ -17,16 +17,11 @@ public class AddressRepositoryImpl {
     @Autowired
     private IAddressRepository iAddressRepository;
 
-    public AddressRepositoryImpl(IAddressRepository iAddressRepository) {
-        this.iAddressRepository = iAddressRepository;
-
-    }
-
-    public Address saveAddress(Address address) {
-        Address addressSaved = iAddressRepository.save(address);
-        AddressDTO addressDTO = new AddressDTO(address);
-        addressDTOMap.put(addressSaved.getId(), addressDTO);
-        return addressSaved;
+    public AddressDTO saveAddress(AddressDTO addressDTO) {
+        Address addressToBeSaved = iAddressRepository.save(new Address(addressDTO));
+        addressDTO.setId(addressToBeSaved.getId());
+        addressDTOMap.put(addressDTO.getId(), addressDTO);
+        return addressDTO;
     }
 
     public Address searchAddressById(Integer id) {

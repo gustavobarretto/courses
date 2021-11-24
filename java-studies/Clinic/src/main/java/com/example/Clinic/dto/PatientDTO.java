@@ -10,14 +10,14 @@ public class PatientDTO {
     private Integer id;
     private String name;
     private String surname;
-    private Integer address_id;
+    private AddressDTO addressDTO;
 
     public PatientDTO() {}
 
-    public PatientDTO(Patient pacient) {
-        this.id = pacient.getId();
-        this.name = pacient.getName();
-        this.surname = pacient.getSurname();
-        this.address_id = pacient.getAddress().getId();
+    public PatientDTO(Patient patient) {
+        this.id = patient.getId();
+        this.name = patient.getName();
+        this.surname = patient.getSurname();
+        this.addressDTO = new AddressDTO(patient.getAddress());
     }
 }

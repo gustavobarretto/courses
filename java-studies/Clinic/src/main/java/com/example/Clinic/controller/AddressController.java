@@ -1,6 +1,7 @@
 package com.example.Clinic.controller;
 
 
+import com.example.Clinic.dto.AddressDTO;
 import com.example.Clinic.service.impl.AddressServiceImpl;
 import com.example.Clinic.persistence.entities.Address;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,21 +17,21 @@ public class AddressController {
     private AddressServiceImpl addressService;
 
     @PostMapping("/add")
-    public ResponseEntity<Address> saveAddress(@RequestBody Address address) {
-        return ResponseEntity.ok(addressService.save(address));
+    public ResponseEntity<AddressDTO> saveAddress(@RequestBody AddressDTO addressDTO) {
+        return ResponseEntity.ok(addressService.save(addressDTO));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Address> getAddress(@PathVariable Integer id) {
+    public ResponseEntity<AddressDTO> getAddress(@PathVariable Integer id) {
         return ResponseEntity.ok(addressService.findById(id));
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Address>> getAllAddressess() {
+    public ResponseEntity<List<AddressDTO>> getAllAddressess() {
         return ResponseEntity.ok(addressService.searchAll());
     }
 
-    @DeleteMapping("/delete/{id}")
+   /* @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteAddress(@PathVariable Integer id) {
         addressService.delete(id);
         Address address = addressService.findById(id);
@@ -42,6 +43,6 @@ public class AddressController {
     @PutMapping("/update/{id}")
     public ResponseEntity<Address> updateAddress(@RequestBody Address address, @PathVariable Integer id) {
         return ResponseEntity.ok(addressService.update(id, address));
-    }
+    }*/
 
 }

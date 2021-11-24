@@ -1,5 +1,6 @@
 package com.example.Clinic.controller;
 
+import com.example.Clinic.dto.PatientDTO;
 import com.example.Clinic.persistence.entities.Patient;
 import com.example.Clinic.service.impl.PatientServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,21 +16,21 @@ public class PatientController {
     private PatientServiceImpl patientService;
 
     @PostMapping("/add")
-    public ResponseEntity<Patient> savePatient(Patient patient){
-        return ResponseEntity.ok(patientService.save(patient));
+    public ResponseEntity<PatientDTO> savePatient(PatientDTO patientDTO){
+        return ResponseEntity.ok(patientService.save(patientDTO));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Patient> getPatient(@PathVariable Integer id){
+    public ResponseEntity<PatientDTO> getPatient(@PathVariable Integer id){
         return ResponseEntity.ok(patientService.findById(id));
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Patient>> getAllPatients(){
+    public ResponseEntity<List<PatientDTO>> getAllPatients(){
         return ResponseEntity.ok(patientService.searchAll());
     }
 
-    @DeleteMapping("/delete/{id}")
+ /*   @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deletePatient(@PathVariable Integer id) {
         patientService.delete(id);
         Patient patient = patientService.findById(id);
@@ -41,6 +42,6 @@ public class PatientController {
     @PutMapping("/update/{id}")
     public ResponseEntity<Patient> updatePatient(@PathVariable Integer id, @RequestBody Patient patient){
         return ResponseEntity.ok(patientService.update(id, patient));
-    }
+    }*/
 }
 

@@ -40,7 +40,6 @@ public class Address {
     public Address(){}
 
     public Address(AddressDTO addressDTO) {
-        this.id = addressDTO.getId();
         this.street = addressDTO.getStreet();
         this.number = addressDTO.getNumber();
         this.state = addressDTO.getState();
