@@ -4,16 +4,21 @@ import com.example.Clinic.persistence.entities.Patient;
 import com.example.Clinic.persistence.repository.IPatientRepository;
 import com.example.Clinic.services.IClinicServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PatientService implements IClinicServices<Patient> {
 
     @Autowired
     private IPatientRepository patientRepository;
+    @Autowired
+    private AddressService addressService;
 
     @Override
     public Patient save(Patient patient) {
+        addressService.save(patient.getAddress());
         return patientRepository.save(patient);
     }
 
@@ -24,16 +29,26 @@ public class PatientService implements IClinicServices<Patient> {
 
     @Override
     public List<Patient> findAll() {
-        return null;
+        return patientRepository.findAll();
     }
 
     @Override
     public void delete(Integer id) {
+        patientRepository.deleteById(id);
 
     }
 
     @Override
     public Patient update(Integer id, Patient patient) {
-        return null;
+        Patient patientToBeUpdated = patientRepository.findById(id).get();
+
+        if(patient.getName() != null)
+            patientToBeUpdated.setName(patient.getName());
+        if(patient.getSurname() != null)
+            patientToBeUpdated.setSurname(patient.getSurname());
+        if(patient.getAddress() != null)
+            addressService.update(patientToBeUpdated.getAddress().getId(), patient.getAddress());
+
+        return patientRepository.saveAndFlush(patientToBeUpdated);
     }
 }

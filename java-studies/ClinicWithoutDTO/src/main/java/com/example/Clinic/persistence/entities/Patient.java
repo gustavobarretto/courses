@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
+@Table(name = "patients")
 public class Patient {
 
     @Id
@@ -21,7 +22,7 @@ public class Patient {
     @Column(name = "surname")
     private String surname;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "address_id")
     private Address address;
 

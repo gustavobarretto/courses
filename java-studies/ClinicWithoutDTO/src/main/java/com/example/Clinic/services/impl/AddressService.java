@@ -32,9 +32,12 @@ public class AddressService implements IClinicServices<Address> {
 
     public Address update(Integer id, Address address) {
         Address addressToBeUpdated = addressRepository.findById(id).get();
-        addressToBeUpdated.setCity(address.getCity());
-        addressToBeUpdated.setNumber(address.getNumber());
-        addressToBeUpdated.setStreet(address.getStreet());
+        if(address.getCity() != null)
+            addressToBeUpdated.setCity(address.getCity());
+        if(address.getNumber() != null)
+            addressToBeUpdated.setNumber(address.getNumber());
+        if(address.getStreet() != null)
+            addressToBeUpdated.setStreet(address.getStreet());
         return addressRepository.saveAndFlush(addressToBeUpdated);
     }
 

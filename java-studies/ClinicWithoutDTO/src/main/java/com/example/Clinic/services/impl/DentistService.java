@@ -33,9 +33,12 @@ public class DentistService implements IClinicServices<Dentist> {
 
     public Dentist update(Integer id, Dentist dentist) {
         Dentist dentistToBeUpdated = dentistRepository.findById(id).get();
-        dentistToBeUpdated.setName(dentist.getName());
-        dentistToBeUpdated.setSurname(dentist.getSurname());
-        dentistToBeUpdated.setRegistration(dentist.getRegistration());
-        return dentistRepository.saveAndFlush(dentist);
+        if(dentist.getName() != null)
+            dentistToBeUpdated.setName(dentist.getName());
+        if(dentist.getSurname() != null)
+            dentistToBeUpdated.setSurname(dentist.getSurname());
+        if(dentist.getRegistration() != null)
+            dentistToBeUpdated.setRegistration(dentist.getRegistration());
+        return dentistRepository.saveAndFlush(dentistToBeUpdated);
     }
 }
