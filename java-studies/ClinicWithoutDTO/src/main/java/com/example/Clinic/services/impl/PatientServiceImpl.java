@@ -41,6 +41,8 @@ public class PatientServiceImpl implements IClinicServices<Patient> {
     @Override
     public Patient update(Integer id, Patient patient) {
         Patient patientToBeUpdated = patientRepository.findById(id).get();
+        if(patientToBeUpdated == null)
+            return null;
 
         if(patient.getName() != null)
             patientToBeUpdated.setName(patient.getName());

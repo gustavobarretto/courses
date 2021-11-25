@@ -16,10 +16,12 @@ public class Appointment {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "dentist_id")
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "dentist_id")
     private Dentist dentist;
 
-    @Column(name = "patient_id")
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "patient_id")
     private Patient patient;
 
 }
