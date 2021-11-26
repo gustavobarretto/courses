@@ -4,6 +4,7 @@ import com.example.Clinic.persistence.entities.Appointment;
 import com.example.Clinic.persistence.entities.Dentist;
 import com.example.Clinic.persistence.entities.Patient;
 import com.example.Clinic.persistence.repository.IAppointmentRepository;
+import com.example.Clinic.persistence.repository.IDentistRepository;
 import com.example.Clinic.persistence.repository.IPatientRepository;
 import com.example.Clinic.services.IClinicServices;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,10 +26,8 @@ public class AppointmentServiceImpl implements IClinicServices<Appointment> {
 
     @Override
     public Appointment save(Appointment appointment) {
-        Dentist dentist = dentistService.findById(appointment.getPatient().getId());
-        Patient patient = patientService.findById(appointment.getDentist().getId());
-        appointment.setPatient(patient);
-        appointment.setDentist(dentist);
+        appointment.setDentist(dentistService.findById(appointment.getDentist().getId()));
+        appointment.setPatient(patientService.findById(appointment.getPatient().getId()));
         return appointmentRepository.save(appointment);
     }
 

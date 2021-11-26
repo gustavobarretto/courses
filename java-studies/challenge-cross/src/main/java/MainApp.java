@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public class MainApp {
     public static void main(String[] args) {
 
-        for(int i = 1; i <= 10000; i++) {
+        for(int i = 8000; i <= 10000; i++) {
 
             try {
                 URL url = new URL("http://challenge.dienekes.com.br/api/numbers?page=" + i);
@@ -24,10 +24,10 @@ public class MainApp {
                 InputStreamReader in = new InputStreamReader(connection.getInputStream());
                 BufferedReader br = new BufferedReader(in);
                 String output;
-//                while ((output = br.readLine()) != null) {
-//                    System.out.println(i);
-//                    System.out.println(output);
-//                }
+                while ((output = br.readLine()) != null) {
+                    System.out.println(i);
+                    System.out.println(output);
+                }
                 connection.disconnect();
 
 

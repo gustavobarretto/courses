@@ -30,7 +30,7 @@ export default class ViaCEP extends Component  {
     render() {
 
         return ( 
-            <div className="container d-flex flex-column justify-content-center align-items-center">
+            <div className="container d-flex flex-column justify-content-center align-items-center" style={{height: "100vh"}}>
                 <h3>Pesquisa de CEP pelo ViaCEP:</h3>
                 <Formik  onSubmit={this.handleSubmit} initialValues={{cep: ''}}>
                     <Form className="form-group col-4 d-flex flex-column justify-content-center align-items-center">
@@ -43,9 +43,9 @@ export default class ViaCEP extends Component  {
                           id="cep"
                       />
                       <button className="btn btn-primary col-6" type="submit">Pesquisar</button>
-                      <button className="btn btn-primary col-6 my-3"><Link to="/" style={{textDecoration: "none", color: "white"}}> Voltar</Link></button>
                     </Form>
                   </Formik>
+                      <button className="btn btn-secondary col-2 my-3"><Link to="/" style={{textDecoration: "none", color: "white"}}> Voltar</Link></button>
                   {this.state.endereco.cep && (
                     <div className="container d-flex flex-column gap-3 col-6">
                     <h5>Rua: </h5>

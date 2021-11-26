@@ -20,6 +20,7 @@ public class DentistServiceImpl implements IClinicServices<Dentist> {
     }
 
     public Dentist findById(Integer id) {
+
         return dentistRepository.findById(id).get();
     }
 
