@@ -1,8 +1,8 @@
 package com.example.Clinic.persistence.entities;
 
-import com.example.Clinic.dto.AddressDTO;
 import lombok.Getter;
 import lombok.Setter;
+
 
 import javax.persistence.*;
 
@@ -13,8 +13,8 @@ import javax.persistence.*;
 public class Address {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "street")
@@ -25,27 +25,6 @@ public class Address {
 
     @Column(name = "city")
     private String city;
-
-    @Column(name = "postal_code")
-    private String postalCode;
-
-    @Column(name = "country")
-    private String country;
-
-    @Column(name = "state")
-    private String state;
-
-
-
-    public Address(){}
-
-    public Address(AddressDTO addressDTO) {
-        this.street = addressDTO.getStreet();
-        this.number = addressDTO.getNumber();
-        this.state = addressDTO.getState();
-        this.country = addressDTO.getCountry();
-        this.postalCode = addressDTO.getPostalCode();
-    }
 
 
 
