@@ -53,9 +53,9 @@ public class AppointmentServiceImpl implements IClinicServices<Appointment> {
         Appointment appointmentToBeUpdated = appointmentRepository.findById(id).get();
 
         if(appointment.getPatient() != null)
-            appointmentToBeUpdated.setPatient(appointment.getPatient());
+            appointmentToBeUpdated.setPatient(patientService.findById(appointment.getPatient().getId()));
         if(appointment.getDentist() != null)
-            appointmentToBeUpdated.setPatient(appointment.getPatient());
+            appointmentToBeUpdated.setDentist(dentistService.findById(appointment.getDentist().getId()));
         return appointmentRepository.saveAndFlush(appointmentToBeUpdated);
     }
 }
