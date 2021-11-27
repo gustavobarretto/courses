@@ -15,18 +15,22 @@ public class AddressServiceImpl implements IClinicServices<Address> {
     private IAddressRepository addressRepository;
 
     public Address save(Address address) {
+
         return addressRepository.save(address);
     }
 
     public Address findById(Integer id) {
+
         return addressRepository.findById(id).get();
     }
 
     public List<Address> findAll() {
+
         return addressRepository.findAll();
     }
 
     public void delete(Integer id) {
+
         addressRepository.deleteById(id);
     }
 

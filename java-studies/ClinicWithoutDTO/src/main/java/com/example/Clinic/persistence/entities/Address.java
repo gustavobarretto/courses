@@ -26,6 +26,4 @@ public class Address {
     @Column(name = "city")
     private String city;
 
-
-
 }

@@ -1,6 +1,7 @@
 package com.example.Clinic.services.impl;
 
 import com.example.Clinic.persistence.entities.Patient;
+import com.example.Clinic.persistence.repository.IAddressRepository;
 import com.example.Clinic.persistence.repository.IPatientRepository;
 import com.example.Clinic.services.IClinicServices;
 import org.springframework.beans.factory.annotation.Autowired;
