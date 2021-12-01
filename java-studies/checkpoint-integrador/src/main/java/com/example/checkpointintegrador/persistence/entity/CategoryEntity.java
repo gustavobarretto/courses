@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Setter
@@ -19,6 +21,9 @@ public class CategoryEntity {
 
     @Column(name= "name")
     private String name;
+
+    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
+    private Set<ProductEntity> products = new HashSet<>();
 
     CategoryEntity () {}
 

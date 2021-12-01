@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface CommerceService<T> {
 
-    T saveProduct(T t);
-    T updateProduct(T t, Integer id);
-    void deleteProduct(Integer id);
+    T save(T t);
+    T update(T t, Integer id);
+    void delete(Integer id);
 
     // Methods of search
     T searchById(Integer id);

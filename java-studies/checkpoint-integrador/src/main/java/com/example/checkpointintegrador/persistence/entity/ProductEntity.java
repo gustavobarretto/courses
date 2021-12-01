@@ -30,7 +30,8 @@ public class ProductEntity {
     @Column(name = "image")
     private String image;
 
-    @Column(name = "category_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "category_id")
     private CategoryEntity category;
 
     public ProductEntity() {}

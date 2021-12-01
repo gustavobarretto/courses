@@ -20,14 +20,14 @@ public class ProductServiceImpl implements CommerceService<Product> {
     private CategoryRepository categoryRepository;
 
     @Override
-    public Product saveProduct(Product product) {
+    public Product save(Product product) {
         ProductEntity productEntity = new ProductEntity(product);
         productEntity.setCategory(categoryRepository.saveAndFlush(productEntity.getCategory()));
         return new Product(productRepository.save(productEntity));
     }
 
     @Override
-    public Product updateProduct(Product product, Integer id) {
+    public Product update(Product product, Integer id) {
         ProductEntity productEntity = productRepository.getById(id);
 
         if(productEntity != null) {
@@ -48,7 +48,7 @@ public class ProductServiceImpl implements CommerceService<Product> {
     }
 
     @Override
-    public void deleteProduct(Integer id) {
+    public void delete(Integer id) {
         productRepository.deleteById(id);
     }
 
@@ -75,5 +75,22 @@ public class ProductServiceImpl implements CommerceService<Product> {
     @Override
     public Product searchByName(String name) {
         return null;
+    }
+
+    public List<Product> searchByCategory(String name) {
+        List<Product> productList = new ArrayList<>();
+        List<ProductEntity> productEntityList = new ArrayList<>();
+
+        productEntityList.addAll(productRepository.findAll());
+
+
+        productEntityList.forEach(productEntity -> {
+
+            if(productEntity.getCategory().getName().equalsIgnoreCase(name)) {
+                Product product = new Product(productRepository.getById(productEntity.getId()));
+                productList.add(product);
+            }
+        });
+        return productList;
     }
 }

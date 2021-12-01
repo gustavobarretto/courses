@@ -7,6 +7,7 @@ import com.example.checkpointintegrador.service.CommerceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,13 +17,25 @@ public class CategoryServiceImpl implements CommerceService<Category> {
     private CategoryRepository categoryRepository;
 
     @Override
-    public Category saveProduct(Category category) {
+    public Category save(Category category) {
+        /*List<Category> categoryList =  new ArrayList<>();
+        List<CategoryEntity> categoryEntityList = new ArrayList<>();
+
+        categoryEntityList.addAll(categoryRepository.findAll());
+
+        Category categorySearched = null;
+
+        categoryEntityList.forEach(categoryEntity -> {
+            if(categoryEntity.getName().equalsIgnoreCase(category.getName()))
+                categorySearched = new Category(categoryRepository.getById(categoryEntity.getId()));
+        });
+                */
         CategoryEntity categoryEntity = new CategoryEntity(category);
         return new Category(categoryRepository.save(categoryEntity));
     }
 
     @Override
-    public Category updateProduct(Category category, Integer id) {
+    public Category update(Category category, Integer id) {
         CategoryEntity categoryEntity = categoryRepository.getById(id);
         if(categoryEntity != null) {
             if(category.getName() != null) {
@@ -33,7 +46,7 @@ public class CategoryServiceImpl implements CommerceService<Category> {
     }
 
     @Override
-    public void deleteProduct(Integer id) {
+    public void delete(Integer id) {
         categoryRepository.deleteById(id);
     }
 
@@ -44,6 +57,7 @@ public class CategoryServiceImpl implements CommerceService<Category> {
 
     @Override
     public List<Category> searchAll() {
+
         return null;
     }
 
