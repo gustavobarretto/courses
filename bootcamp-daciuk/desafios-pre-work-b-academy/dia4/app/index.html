@@ -10,9 +10,9 @@
     <form name="car_registration" action="">
       <label for="img">Imagem</label><input name="img" type="text">
       <label for="brand_model">Marca/Modelo</label><input name="brand_model" type="text">
-      <label for="year">Ano</label><input name="year" type="text">
-      <label for="plate">Placa</label><input name="plate" type="text">
-      <label for="color">Cor</label><input name="color" type="text">
+      <label for="car_year">Ano</label><input name="car_year" type="text">
+      <label for="plate_license">Placa</label><input name="plate_license" type="text">
+      <label for="car_color">Cor</label><input name="car_color" type="text">
       <button type="submit">Cadastrar</button>
     </form>
     <table class="cars_table" data-js="cars_table">
@@ -22,8 +22,9 @@
         <th>Year</th>
         <th>Plate</th>
         <th>Color</th>
+        <th><button data-js="delete-button">Delete</button></th>
       </tr>
     </table>
-    <script type="module" src="/main.js"></script>
+   <script src="main.js"></script>
   </body>
 </html>
