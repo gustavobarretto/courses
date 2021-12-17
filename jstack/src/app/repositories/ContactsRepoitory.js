@@ -13,28 +13,27 @@ let contacts = [
 
   },
   {
-
     id: v4(),
     name: 'Jose',
     email: 'jose@mail.com',
     phone: '12131414',
     category_id: v4(),
-
   },
   {
-
     id: v4(),
     name: 'Maria',
     email: 'maria@mail.com',
     phone: '3131313155',
     category_id: v4(),
-
   },
 ];
 
 class ContactsRepository {
-  findAll() {
-    return new Promise((resolve) => resolve(contacts));
+  async findAll() {
+    const rows = await db.query(`
+    SELECT * FROM contacts
+    `);
+
   }
 
   findById(id) {
@@ -59,7 +58,13 @@ class ContactsRepository {
   async create({
     name, email, phone, category_id,
   }) {
-    const row = await db.query();
+    const [row] = await db.query(`
+      INSERT INTO contacts(name, email, phone, category_id)
+      VALUES($1, $2, $3, $4)
+      RETURNING *
+      `, [name, email, phone, category_id]);
+
+      return row
   }
 
   update(id, {
