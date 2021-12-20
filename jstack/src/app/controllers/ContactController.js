@@ -3,7 +3,8 @@ const ContactsRepository = require('../repositories/ContactsRepoitory');
 class ContactController {
   async index(request, response) {
     // Lista todos os registros
-    const contacts = await ContactsRepository.findAll();
+    const { orderBy } = request.query;
+    const contacts = await ContactsRepository.findAll(orderBy);
 
     response.json(contacts);
   }
@@ -75,12 +76,6 @@ class ContactController {
     // Deletar um registro
     const { id } = request.params;
 
-    const contact = await ContactsRepository.findById(id);
-
-    if (!contact) {
-      // 404: Not Found
-      return response.status(404).json({ error: 'User not found' });
-    }
     await ContactsRepository.delete(id);
     // 204: No Content - (mesma coisa do 200) Só que ela não tem corpo.
     response.sendStatus(204);
