@@ -8,6 +8,7 @@ app.use(express.json());
 
 const customers = [];
 
+// Dados da conta
 // cpf - string
 // name - string
 // id - uuid;
