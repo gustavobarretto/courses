@@ -5,6 +5,10 @@ import java.util.List;
 
 public class main {
 
+    public static List<int> calculation(int maxDigit) {
+
+    }
+
     public static void main(String[] args) {
         Integer maxDigit = 7;
         Integer maxSum = 21;
