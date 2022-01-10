@@ -13,19 +13,47 @@ const scrapingResults = [
 ]
 
 
-async function main() {
-  const browser = await puppeteer.launch({ headless: false });
-  const page = await browser.newPage();
+async function scrapeListings(page) {
+
   await page.goto("https://sfbay.craigslist.org/d/software-qa-dba-etc/search/sof");
 
   const html = await page.content();
   const $ = cheerio.load(html);
 
-  $(".result-title").each( (index, element) => console.log($(element).text()) );
-  $(".result-title").each( (index, element) => console.log($(element).attr('href')) );
+  const listings = $(".result-info").map( (index, element) => {
+    const titleElement = $(element).find(".result-title");
+    const timeElement = $(element).find(".result-date");
+    const neighbourhoodElement = $(element).find(".result-hood");
+    const title = $(titleElement).text();
+    const url = $(titleElement).attr("href");
+    const datePosted = new Date($(timeElement).attr("datetime"));
+    const neighbourhood = $(neighbourhoodElement).text().match(/\w+/g).join(' ');
 
-  browser.close();
+    return {
+      title,
+      url,
+      neighbourhood,
+      datePosted
+    };
+  }).get();
 
+  return listings;
+}
+
+async function scrapeJobScriptions(listings, page) {
+  for(let i = 0; i < listings.length; i++) {
+    await page.goto(listings[i].url);
+    const html = await page.content();
+  }
+}
+
+async function main() {
+  const browser = await puppeteer.launch({ headless: false });
+  const page = await browser.newPage();
+  const listings = await scrapeListings(page);
+  const listingsWithJobDescriptions = await scrapeJobScriptions(listings, page);
+
+  console.log(listings);
 }
 
 main();
