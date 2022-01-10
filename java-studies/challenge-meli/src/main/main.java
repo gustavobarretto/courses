@@ -5,12 +5,8 @@ import java.util.List;
 
 public class main {
 
-    public static List<int> calculation(int maxDigit) {
-
-    }
-
     public static void main(String[] args) {
-        Integer maxDigit = 7;
+        // Integer maxDigit = 1;
         Integer maxSum = 21;
 
         List<Integer> numbers = new ArrayList<>();
@@ -31,6 +27,7 @@ public class main {
                 numbers.add(index);
             }
         }
+        // return numbers.isEmpty() ? null : numbers;
         System.out.println(numbers);
     }
 }
