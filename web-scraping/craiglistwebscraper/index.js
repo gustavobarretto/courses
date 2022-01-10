@@ -40,18 +40,40 @@ async function scrapeListings(page) {
   return listings;
 }
 
-async function scrapeJobScriptions(listings, page) {
+async function scrapeJobDescriptions(listings, page) {
   for(let i = 0; i < listings.length; i++) {
     await page.goto(listings[i].url);
     const html = await page.content();
+    const $ = cheerio.load(html);
+
+    const jobDescription = $('#postingbody').text();
+    const compensation = $('.attrgroup')
+      .text()
+      .match(/compensation: [$a-zA-Z0-9. -]+/gm)
+
+    listings[i].jobDescription = jobDescription;
+
+    !compensation ? listings[i].compensation = 'not informed' :
+      listings[i].compensation = compensation.join('').replace('compensation: ', '');
+
+
+    console.log(listings[i].compensation);
+
+    await sleep(1000) //1s second sleep;
   }
+}
+
+
+
+async function sleep(miliseconds) {
+  return new Promise( resolve => setTimeout(resolve, miliseconds));
 }
 
 async function main() {
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   const listings = await scrapeListings(page);
-  const listingsWithJobDescriptions = await scrapeJobScriptions(listings, page);
+  const listingsWithJobDescriptions = await scrapeJobDescriptions(listings, page);
 
   console.log(listings);
 }
