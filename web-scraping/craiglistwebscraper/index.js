@@ -17,7 +17,7 @@ const scrapingResults = [
 ];
 
 async function connectToMongoDb() {
-  const url = "mongodb+srv://admin:webscrapping%40teste@craiglist-database.wzavt.mongodb.net/craiglist-database?retryWrites=true&w=majority"
+  const url = "@@@"
   await mongoose.connect(url);
   console.log("connected to the mongodb")
 }
