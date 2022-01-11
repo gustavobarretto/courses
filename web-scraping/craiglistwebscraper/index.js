@@ -1,6 +1,8 @@
 const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 
+// password: webscrapping@teste
+
 const scrapingResults = [
   {
     title: " Senior Full-stack Engineer | $140,000 - $180,000 per year",
