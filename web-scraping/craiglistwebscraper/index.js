@@ -1,5 +1,7 @@
 const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
+const mongoose = require('mongoose');
+const Listing = require('./model/Listining');
 
 // password: webscrapping@teste
 
@@ -12,7 +14,14 @@ const scrapingResults = [
     jobDescription: "If you're interested in applying for the role, you can check it out here: https://www.hireart.com/jobs/3506e90b/apply",
     compensation: "compensation: $140,000 - $180,000 per year"
   }
-]
+];
+
+async function connectToMongoDb() {
+  const url = "mongodb+srv://admin:webscrapping%40teste@craiglist-database.wzavt.mongodb.net/craiglist-database?retryWrites=true&w=majority"
+  await mongoose.connect(url);
+  console.log("connected to the mongodb")
+
+}
 
 
 async function scrapeListings(page) {
@@ -57,12 +66,10 @@ async function scrapeJobDescriptions(listings, page) {
 
     !compensation ? listings[i].compensation = 'not informed' :
       listings[i].compensation = compensation.join('').replace('compensation: ', '');
-
-
-    console.log(listings[i].compensation);
-
+    
+    const listingModel = new Listing(listings[i]);
+    await listingModel.save();
     await sleep(1000) //1s second sleep;
-  }
 }
 
 
@@ -72,6 +79,7 @@ async function sleep(miliseconds) {
 }
 
 async function main() {
+  await connectToMongoDb();
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   const listings = await scrapeListings(page);
