@@ -31,7 +31,7 @@ async function scrapeJobHeader() {
 }
 
 async function scrapeDescription(jobsWithHeaders) {
-  return await Promise.all(jobsWithHeaders.map( job => {
+  return await Promise.all(jobsWithHeaders.map( async (job) => {
     const response = await axios.get(job.url)
     const htmlResult = response.data;
     const $ = cheerio.load(htmlResult);
@@ -39,19 +39,23 @@ async function scrapeDescription(jobsWithHeaders) {
     // Removing previously element
     $('.print-qrcode-container').remove();
 
+    console.log($.html())
+
+    
+
     job.description = $('#posting').text();
     job.compensation = $('body > section > section > section > div.mapAndAttrs > p > span:nth-child(1) > b').text();
 
     return job;
 
-  })
+  }))
 }
 
-async function scrapeCraigslist() {
+async function scrapeCraiglist() {
   const jobsWithHeaders = await scrapeJobHeader();
   const jobsFullData = await scrapeDescription(jobsWithHeaders);
 
-  console.log(jobsFullData);
+  
 }
 
 scrapeCraiglist();
