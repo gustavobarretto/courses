@@ -20,7 +20,6 @@ async function connectToMongoDb() {
   const url = "mongodb+srv://admin:webscrapping%40teste@craiglist-database.wzavt.mongodb.net/craiglist-database?retryWrites=true&w=majority"
   await mongoose.connect(url);
   console.log("connected to the mongodb")
-
 }
 
 
@@ -66,10 +65,11 @@ async function scrapeJobDescriptions(listings, page) {
 
     !compensation ? listings[i].compensation = 'not informed' :
       listings[i].compensation = compensation.join('').replace('compensation: ', '');
-    
+
     const listingModel = new Listing(listings[i]);
     await listingModel.save();
     await sleep(1000) //1s second sleep;
+}
 }
 
 
