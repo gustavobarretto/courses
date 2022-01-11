@@ -3,14 +3,14 @@ const cheerio = require('cheerio');
 const mongoose = require('mongoose');
 const Listing = require('./model/Listining');
 
-// password: webscrapping@teste
+
 
 const scrapingResults = [
   {
     title: " Senior Full-stack Engineer | $140,000 - $180,000 per year",
     datePosted: new Date("2019-07-26 12:00:00"),
     neighbourhood: "(palo alto)",
-    url: "https://sfbay.craigslist.org/sfc/sof/d/san-francisco-senior-full-stack/7429472263.html",
+    url: "@@",
     jobDescription: "If you're interested in applying for the role, you can check it out here: https://www.hireart.com/jobs/3506e90b/apply",
     compensation: "compensation: $140,000 - $180,000 per year"
   }
