@@ -2,8 +2,13 @@
   "name": "tdd-scraping",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.24.0",
+    "cheerio": "^1.0.0-rc.10",
     "jest": "^27.4.7"
   }
 }
