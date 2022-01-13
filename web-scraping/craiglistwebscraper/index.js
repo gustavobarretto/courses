@@ -79,7 +79,7 @@ async function sleep(miliseconds) {
 }
 
 async function main() {
-  await connectToMongoDb();
+  // await connectToMongoDb();
   const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
   const listings = await scrapeListings(page);
