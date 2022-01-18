@@ -17,7 +17,7 @@ const scrapingResults = [
 ];
 
 async function connectToMongoDb() {
-  const url = "@@@"
+  const url = env.process.URL;
   await mongoose.connect(url);
   console.log("connected to the mongodb")
 }
