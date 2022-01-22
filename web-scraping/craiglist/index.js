@@ -35,7 +35,6 @@ async function scrapeDescription(jobsWithHeaders) {
     const response = await axios.get(job.url)
     const htmlResult = response.data;
     const $ = cheerio.load(htmlResult);
-
     // Removing previously element
     $('.print-qrcode-container').remove();
 
