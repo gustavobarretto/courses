@@ -1,7 +1,9 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
         // Ex 01
         /*Faça um programa para ler dois valores inteiros, e depois mostrar na tela a soma desses números com uma
         mensagem explicativa, conforme exemplos.*/
@@ -25,9 +27,41 @@ public class Main {
             pi = 3.14159;
             Scanner sc = new Scanner(System.in);
             System.out.println("Escreva o raio do círculo: ");
-
-
+            raio = sc.nextDouble();
+            area = pi * Math.pow(raio, 2);
+            System.out.printf("A área desse é %.4f.%n", area);
         }
+        // Ex 03
+        /*Fazer um programa para ler quatro valores inteiros A, B, C e D. A seguir, calcule e mostre a diferença do produto
+        de A e B pelo produto de C e D segundo a fórmula: DIFERENCA = (A * B - C * D).*/
+        int diferenca, A, B, C, D;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Escreva quatro números para:");
+        System.out.println("A:");
+        A = sc.nextInt();
+        sc.nextLine();
+        System.out.println("B:");
+        B = sc.nextInt();
+        sc.nextLine();
+        System.out.println("C:");
+        C = sc.nextInt();
+        sc.nextLine();
+        System.out.println("D:");
+        D = sc.nextInt();
+        sc.nextLine();
+
+        diferenca = (A * B) - (C * D);
+        System.out.println("A diferença é: " + diferenca);
+    }
+
+    {
+        // Ex 04
+        /*Fazer um programa que leia o número de um funcionário, seu número de horas trabalhadas, o valor que recebe por
+        hora e calcula o salário desse funcionário. A seguir, mostre o número e o salário do funcionário, com duas casas
+        decimais*/
+        double salario, horaTrabalhada, valorHora;
+        System.out.println("Insira o valor recebido por hora de trabalho");
+
     }
 
 }
