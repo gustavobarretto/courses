@@ -16,5 +16,19 @@ public class Main {
         System.out.println("PERIMETER = " + rectangle.getPerimeter());
         System.out.println("DIAGONAL = " + rectangle.getDiagonal());
 
+        Employee employee = new Employee();
+        System.out.println("Enter the name, gross salary and tax of the employee:");
+        employee.name = sc.next();
+        sc.nextLine();
+        employee.grossSalary = sc.nextDouble();
+        employee.tax = sc.nextDouble();
+
+        System.out.printf("Employee: %s, $ %.2f%n", employee.name, employee.netSalary());
+
+        System.out.print("Which percentage to increase salary?: ");
+        employee.getIncrease(sc.nextDouble());
+
+        System.out.printf("Updated data: %s, $ %.2f%n", employee.name, employee.netSalary());
+
     }
 }
