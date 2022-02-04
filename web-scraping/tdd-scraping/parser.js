@@ -1,7 +1,7 @@
 const cheerio = require("cheerio");
 
 function getDatedPosted($, element) {
-  return new Date($(element).find(".result-date").attr("datetime"))
+  return new Date($(element).find(".result-date").attr("datetime"));
 }
 
 function getHood($, element) {
