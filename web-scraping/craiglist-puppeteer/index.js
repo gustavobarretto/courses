@@ -54,17 +54,11 @@ async function main() {
 
     console.log($.html());
 
-    console.log('Cheguei aqui')
-
     console.log($('.small-banner-item'));
 
     $('.small-banner-item').each( (index, element) => {
       console.log($(element).attr('href'));
     })
-
-
-
-
   } catch (err) {
     console.error(err);
   }
