@@ -11,7 +11,6 @@ async function main() {
     // Click in restaurant
     await page.click('#__next > section.landing-v2-multi-categories > div.landing-v2-multi-categories__wrapper > div > div:nth-child(1) > div', puppeteer.MouseButton)
 
-
     await sleep(1000);
 
     // Click in modal input to write the zipcoded
