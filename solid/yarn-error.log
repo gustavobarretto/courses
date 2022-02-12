@@ -1,0 +1,41 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Gustavo\.yarn\releases\yarn-1.22.17.cjs add tyepescript ts-node-dev
+
+PATH: 
+  C:\Users\Gustavo\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Gustavo\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\HashiCorp\Vagrant\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\ProgramData\chocolatey\bin;%JAVA_HOME%\bin;%M2_HOME%\bin;C:\Users\Gustavo\Downloads\apache-maven-3.8.3-bin\apache-maven-3.8.3\bin;C:\Program Files\MongoDB\Server\5.0\bin;C:\Program Files\PostgreSQL\14\bin;C:\Program Files (x86)\Vim\vim82;C:\Program Files (x86)\Neovim\bin;C:\Users\Gustavo\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\PuTTY;C:\Users\Gustavo\scoop\shims;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\Gustavo\AppData\Local\Programs\Python\Python39\Scripts;C:\Users\Gustavo\AppData\Local\Programs\Python\Python39;C:\Users\Gustavo\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\Gustavo\AppData\Local\Programs\Python\Python310;C:\Users\Gustavo\AppData\Local\Microsoft\WindowsApps;C:\Users\Gustavo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;C:\Users\Gustavo\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Java\jdk-11.0.12\bin;C:\Users\Gustavo\Downloads\apache-maven-3.8.3-bin\apache-maven-3.8.3\bin;C:\Program Files\heroku\bin;C:\Program Files\PostgreSQL\14\bin;C:\Program Files (x86)\Vim\vim82;C:\Program Files (x86)\Neovim\bin;C:\Users\Gustavo\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  14.17.6
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/tyepescript: Not found
+      at Request.params.callback [as _callback] (C:\Users\Gustavo\.yarn\releases\yarn-1.22.17.cjs:78557:18)
+      at Request.self.callback (C:\Users\Gustavo\.yarn\releases\yarn-1.22.17.cjs:135288:22)
+      at Request.emit (events.js:400:28)
+      at Request.<anonymous> (C:\Users\Gustavo\.yarn\releases\yarn-1.22.17.cjs:136260:10)
+      at Request.emit (events.js:400:28)
+      at IncomingMessage.<anonymous> (C:\Users\Gustavo\.yarn\releases\yarn-1.22.17.cjs:136182:12)
+      at Object.onceWrapper (events.js:519:28)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+
+npm manifest: 
+  {
+    "name": "solid",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
