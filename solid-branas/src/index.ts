@@ -6,8 +6,6 @@ import ShareButtonLinkedin from "./ShareButtonLinkedin";
 import ShareButtonPrint from "./ShareButtonPrint";
 import ShareButtonTwitter from "./ShareButtonTwitter";
 
-
-
 const eventHandler = new MockEventHandler();
 
 const twitter: AbstractShareButton = new ShareButtonTwitter(eventHandler, ".btn-twitter", "https://www.youtube.com/rodrigobranas");
