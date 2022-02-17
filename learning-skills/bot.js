@@ -1,3 +1,5 @@
+import opcaoDublado from "./opcaoDublado";
+
 class Interaction {
   
   async sendResponse({ context, string, stage }) {
@@ -40,6 +42,8 @@ class Opcao1 extends Interaction {
 //   `,
 //   stage: 'respsotaUsuario_opcao1'
 // })
+
+Interaction.sendResponse(opcaoDublado(this.context));
 
 // Interaction.getResponse({
 //   context,
