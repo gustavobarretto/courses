@@ -25,7 +25,17 @@ class Interaction {
     this.flow.respostaUsuario = false;  
 
   }
+
+  async getData({ context,  object, attribute, stage}) {
+    if (!this.flow.respostaUsuario) return;
+    Object.defineProperty(object, attribute, context.activity.text)
+    this.flow.tentativas = 0;
+    this.flow.respostaUsuario = false;
+    this.passoAtual = stage;
+  
+  }
 }
+
 
 class Opcao1 extends Interaction {
   constructor() {
@@ -44,7 +54,6 @@ class Opcao1 extends Interaction {
 // })
 
 Interaction.sendResponse(opcaoDublado(this.context));
-
 // Interaction.getResponse({
 //   context,
 //   options: [
