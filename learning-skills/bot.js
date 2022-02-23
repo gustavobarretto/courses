@@ -1,4 +1,5 @@
 import opcaoDublado from "./opcaoDublado";
+import { opcaoAudio } from "./opcaoAudio";
 
 class Interaction {
   
@@ -36,22 +37,25 @@ class Interaction {
   }
 }
 
-
-class Opcao1 extends Interaction {
-  constructor() {
-    super();
+function sendObject(context, string, stage) {
+  return {
+    context,
+    string,
+    stage
   }
+};
+
+function getObject(context, options) {
+  return {
+    context,
+    options
+  }
+
 }
 
-// Interaction.sendResponse({
-//   context,
-//   string: `
-//     Escolha uma opção de áudio:
-//     1 - Dublado;
-//     2 - Legendado
-//   `,
-//   stage: 'respsotaUsuario_opcao1'
-// })
+module.exports = { sendObject, getObject }
+Interaction.sendResponse(opcaoAudio);
+
 
 Interaction.sendResponse(opcaoDublado(this.context));
 // Interaction.getResponse({
