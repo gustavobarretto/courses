@@ -1,0 +1,36 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Gustavo\.yarn\releases\yarn-1.22.17.cjs init --y
+
+PATH: 
+  C:\Users\Gustavo\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Gustavo\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\HashiCorp\Vagrant\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\ProgramData\chocolatey\bin;%JAVA_HOME%\bin;%M2_HOME%\bin;C:\Users\Gustavo\Downloads\apache-maven-3.8.3-bin\apache-maven-3.8.3\bin;C:\Program Files\MongoDB\Server\5.0\bin;C:\Program Files\PostgreSQL\14\bin;C:\Program Files (x86)\Vim\vim82;C:\Program Files (x86)\Neovim\bin;C:\Users\Gustavo\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\PuTTY;C:\Users\Gustavo\scoop\shims;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\Gustavo\AppData\Local\Programs\Python\Python39\Scripts;C:\Users\Gustavo\AppData\Local\Programs\Python\Python39;C:\Users\Gustavo\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\Gustavo\AppData\Local\Programs\Python\Python310;C:\Users\Gustavo\AppData\Local\Microsoft\WindowsApps;C:\Users\Gustavo\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.3\bin;C:\Users\Gustavo\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Java\jdk-11.0.12\bin;C:\Users\Gustavo\Downloads\apache-maven-3.8.3-bin\apache-maven-3.8.3\bin;C:\Program Files\heroku\bin;C:\Program Files\PostgreSQL\14\bin;C:\Program Files (x86)\Vim\vim82;C:\Program Files (x86)\Neovim\bin;C:\Users\Gustavo\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.13.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: canceled
+      at Interface.<anonymous> (C:\Users\Gustavo\.yarn\releases\yarn-1.22.17.cjs:131548:13)
+      at Interface.emit (node:events:390:28)
+      at Interface._ttyWrite (node:readline:1081:16)
+      at ReadStream.onkeypress (node:readline:288:10)
+      at ReadStream.emit (node:events:390:28)
+      at emitKeys (node:internal/readline/utils:358:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
+      at ReadStream.emit (node:events:390:28)
+      at addChunk (node:internal/streams/readable:315:12)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
