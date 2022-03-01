@@ -12,4 +12,17 @@ async function main(cep) {
   
 }
 
+
+const { data } = await;
+const { accessToken } = data;
+
+accessToken
+
+
+
+
+
+
+
+
 main('41830380');
