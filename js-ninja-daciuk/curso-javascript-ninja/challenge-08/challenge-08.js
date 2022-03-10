@@ -55,7 +55,7 @@ vai efetuar. Será uma string com os valores `+`, `-`, `*`, `/` ou `%`;
 */
 
 function calculator(param) {
-    
+
     switch (param) {
         case '+':
             function sum (x, y) {
@@ -88,7 +88,7 @@ function calculator(param) {
             }
             return rest;
         default:
-            return 'Operação inválida.' 
+            return 'Operação inválida.'
     }
 }
 

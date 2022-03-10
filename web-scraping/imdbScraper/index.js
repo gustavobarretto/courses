@@ -14,7 +14,9 @@ async function scrapeTitlesRanksAndRatings() {
   const { data } = await axios.get('https://www.imdb.com/chart/top/?ref_=nv_mv_250')
   const $ = await cheerio.load(data);
   
-  const movies = $('td.titleColumn > a').map((i, el) => {
+  const movies = $('tr').map((i, el) => {
+    const title = $(el).find("td.titleColumn > a").text();
+    const imdbRating = $("td.ratingColumn.imdbRating").text();
     return $(el).text();
   })
   .get();
