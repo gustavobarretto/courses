@@ -1,8 +1,10 @@
 package com.example.hateoasminiproject.domain.service.impl;
 
+import com.example.hateoasminiproject.domain.exception.ProductNotFoundException;
 import com.example.hateoasminiproject.domain.model.Product;
 import com.example.hateoasminiproject.domain.repository.ProductRepository;
 import com.example.hateoasminiproject.domain.service.IProductService;
+import com.example.hateoasminiproject.infrastructure.exception.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +23,7 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public Product findById(String id) {
-        return productRepository.findById(id).get();
+        return productRepository.findById(id).orElseThrow( () -> new ProductNotFoundException(id));
     }
 
     @Override
