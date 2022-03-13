@@ -5,11 +5,12 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ProductFilter {
+public class UserFilter {
 
-    private String title;
-    private Double price;
-    private String classification;
+    private String name;
+    private Integer age;
+    private String email;
+
+
 
 }
-

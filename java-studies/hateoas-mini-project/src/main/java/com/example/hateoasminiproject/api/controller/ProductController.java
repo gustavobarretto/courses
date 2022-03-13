@@ -10,7 +10,6 @@ import com.example.hateoasminiproject.domain.service.IProductService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PagedResourcesAssembler;
 import org.springframework.hateoas.PagedModel;
@@ -20,9 +19,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.lang.reflect.Field;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
+
 
 @RestController
 @RequestMapping("products")
@@ -46,8 +44,8 @@ public class ProductController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<?> get(@PathVariable String id) {
-        return ResponseEntity.ok(service.findById(id));
+    public ResponseEntity<ProductResponse> get(@PathVariable String id) {
+        return ResponseEntity.ok(assembler.toModel(service.findById(id)));
     }
 
     @GetMapping()

@@ -26,7 +26,7 @@ public class ProductAssembler extends RepresentationModelAssemblerSupport<Produc
         productResponse.add(Link.of(WebMvcLinkBuilder
                 .linkTo(ProductController.class)
                 .toUri()
-                .toString(),"colection"));
+                .toString(),"collection"));
 
         return productResponse;
     }

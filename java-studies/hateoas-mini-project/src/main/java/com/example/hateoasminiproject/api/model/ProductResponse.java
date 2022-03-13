@@ -9,10 +9,9 @@ import org.springframework.hateoas.RepresentationModel;
 public class ProductResponse extends RepresentationModel<ProductResponse> {
 
     private String id;
-    private String name;
-    private String surname;
-    private Integer age;
-    private String email;
-
+    private String title;
+    private String description;
+    private Double price;
+    private String classification;
 
 }

@@ -7,10 +7,10 @@ import lombok.Setter;
 @Setter
 public class ProductRequest {
 
-    private String name;
-    private String surname;
-    private Integer age;
-    private String email;
-    private String password;
+    private String id;
+    private String title;
+    private String description;
+    private Double price;
+    private String classification;
 
 }

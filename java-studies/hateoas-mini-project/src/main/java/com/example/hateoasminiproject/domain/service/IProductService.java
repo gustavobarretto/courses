@@ -5,8 +5,6 @@ import com.example.hateoasminiproject.domain.model.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.List;
-
 public interface IProductService {
 
     Product save(Product product);
