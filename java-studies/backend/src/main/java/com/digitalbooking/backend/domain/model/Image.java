@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Getter
@@ -27,4 +28,12 @@ public class Image {
     private Product product;
 
     public boolean isNew() { return id != null; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Image image = (Image) o;
+        return Objects.equals(id, image.id) && Objects.equals(title, image.title);
+    }
 }

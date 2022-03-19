@@ -29,6 +29,14 @@ public class Product {
     )
     private Set<Image> images = new HashSet<>();
 
+    @JsonIgnore
+    @ManyToMany(
+            mappedBy = "products",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
+    )
+    private Set<Characteristic> characteristics = new HashSet<>();
+
     @ManyToOne(
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
@@ -42,6 +50,8 @@ public class Product {
     )
     @JoinColumn(name = "city_id")
     private City city;
+    private Integer stars;
+    private Double rating;
 
     public boolean isNew() { return id != null; }
 }
