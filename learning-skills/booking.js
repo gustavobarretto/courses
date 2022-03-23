@@ -5,7 +5,7 @@ const { testElement } = require('domutils');
 
 async function main () {
 
-  const { data } = await axios.get('https://www.booking.com/hotel/br/you-stay-at-vila-olimpia.pt-br.html?aid=304142;label=gen173nr-1DCAEoggI46AdILVgEaCCIAQGYAS24ARfIAQzYAQPoAQH4AQKIAgGoAgO4Apja1pEGwAIB0gIkYWEwNTc4N2UtZTQ2ZC00OGEyLThmYWQtMWNhZTBlMTIxODU22AIE4AIB;sid=6e8d23d270e10e3a6c0b8f53f6c4fef1;dist=0;group_adults=2;group_children=0;hapos=1;hpos=1;no_rooms=1;req_adults=2;req_children=0;room1=A%2CA;sb_price_type=total;sr_order=popularity;srepoch=1647684896;srpvid=2e79480f842300c9;type=total;ucfs=1&#hotelTmpl');
+  const { data } = await axios.get('https://www.booking.com/searchresults.pt-br.html?label=gen173nr-1DCAEoggI46AdILVgEaCCIAQGYAS24ARfIAQzYAQPoAQH4AQKIAgGoAgO4AsfT4pEGwAIB0gIkYTFlM2QzMDEtZmYxNC00YmJjLWE4ZWUtYjFjZjdiYmNjYjJj2AIE4AIB&lang=pt-br&sid=6e8d23d270e10e3a6c0b8f53f6c4fef1&sb=1&sb_lp=1&src=index&src_elem=sb&error_url=https%3A%2F%2Fwww.booking.com%2Findex.pt-br.html%3Flabel%3Dgen173nr-1DCAEoggI46AdILVgEaCCIAQGYAS24ARfIAQzYAQPoAQH4AQKIAgGoAgO4AsfT4pEGwAIB0gIkYTFlM2QzMDEtZmYxNC00YmJjLWE4ZWUtYjFjZjdiYmNjYjJj2AIE4AIB%3Bsid%3D6e8d23d270e10e3a6c0b8f53f6c4fef1%3Bsb_price_type%3Dtotal%26%3B&ss=Porto+de+Galinhas%2C+Pernambuco%2C+Brasil&is_ski_area=0&checkin_year=&checkin_month=&checkout_year=&checkout_month=&group_adults=2&group_children=0&no_rooms=1&b_h4u_keep_filters=&from_sf=1&ss_raw=Porto+de+Galinhas&ac_position=0&ac_langcode=xb&ac_click_type=b&dest_id=-663612&dest_type=city&place_id_lat=-8.50468&place_id_lon=-35.005&search_pageview_id=1eee74e308260348&search_selected=true');
   const $ = cheerio.load(data);
   // $('.bh-photo-grid-item').each( (index, element) => console.log($(element).attr('style').match( /(https:\/\/.+)\)/, 'g')[1] ));
 
@@ -20,15 +20,21 @@ async function main () {
 
   // console.log($('.hp_address_subtitle').text());
 
-  const text = []
-  const description = $('#property_description_content').children().each( (index, element) => {
-    text.push($(element).text());
+  // const text = []
+  // const description = $('#property_description_content').children().each( (index, element) => {
+  //   text.push($(element).text());
+  // })
 
-    
-    
-  })
+  // console.log(text.join(' '))
 
-  console.log(text.join(' '))
+
+  const starsList = [];
+    $('._bebcf8d60').each( (index, element) => {
+      const starsCounted = $(element).children().length;
+      starsList.push(starsCounted);
+    });
+
+  console.log(starsList);
 
   
 
