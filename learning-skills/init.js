@@ -24,7 +24,6 @@ const person = {
     "alto",
     "musculoso"
   ]
-  
 }
 
 
