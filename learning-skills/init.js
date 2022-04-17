@@ -12,5 +12,4 @@ const obj1 = {
   101: "Alô"
 }
 
-
 console.log(Object.entries(obj))
