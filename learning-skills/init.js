@@ -5,7 +5,6 @@
 // DADOS DE REFERÊNCIA -> objetos, arrays
 
 // métodos e funções e encapsulamento
-
 const obj = {
   99: "Sudeste",
   func: function() {}
