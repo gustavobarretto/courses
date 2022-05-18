@@ -38,6 +38,7 @@ fun setupGame() {
                 remainingGuesses--
                 mistakes++
                 if(mistakes == 6) {
+                    gameStatus()
                     gameOver = true
                     println("Game over! The word was $word.")
                 }
