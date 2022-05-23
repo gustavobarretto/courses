@@ -67,9 +67,17 @@ HAVING qnt_videos_by_playlist > 3;
 
 
 -- Insira um novo avatar e atribua-o a um usuário.
-INSERT INTO avatar
+INSERT INTO avatar VALUE(86, "Avatar Novo", "fake url");
+UPDATE usuario SET Avatar_idAvatar = 86 WHERE usuario.idUsuario = 1; 
 
 -- Gere um relatório de estilo de classificação de avatares usados ​​por país.
+SELECT avatar.nome as avatar_name, pais.nome as avatar_country, COUNT(usuario.Avatar_idAvatar) as total_used
+FROM avatar
+INNER JOIN usuario
+ON avatar.idAvatar = usuario.Avatar_idAvatar
+INNER JOIN pais
+ON usuario.Pais_idPais = pais.idPais
+GROUP BY pais.nome;
 
 -- Insira um usuário com os seguintes dados:
 -- Nome: Roberto Rodriguez
@@ -79,7 +87,18 @@ INSERT INTO avatar
 -- Código postal: 1429
 -- País: Argentino
 -- Avatar: carita feliz 
+INSERT INTO
+usuario (nome, email, senha, dataNascimento, codigoPostal, Pais_idPais, Avatar_idAvatar)
+VALUES
+("Roberto Rodriguez", "rrodriguez@dhtube.com", "rr1254", "1975-11-01", 1429, 9, 85);
 
-
--- Gere um relatório de todos os vídeos e suas hashtags, mas apenas aqueles cujos nomes de hashtags contêm menos de 10 caracteres, classificados em ordem crescente pelo número de caracteres na hashtag.
-
+-- Gere um relatório de todos os vídeos e suas hashtags,
+-- mas apenas aqueles cujos nomes de hashtags contêm menos
+-- de 10 caracteres, classificados em ordem crescente pelo número de caracteres na hashtag.
+SELECT * FROM video
+INNER JOIN video_hashtag
+ON video.idVideo = video_hashtag.Video_idVideo
+INNER JOIN hashtag
+ON hashtag.idHashtag = video_hashtag.hashtag_idHashtag
+WHERE length(hashtag.nome) < 10
+GROUP BY video.titulo;
