@@ -54,7 +54,7 @@ BEGIN
 END $$
 DELIMITER ;
 
-CALL calculate_tax(5000, 21, @produt_value, @tax_applied, @total_value);
-SELECT @produt_value, @tax_applied, @total_value;
+CALL calculate_tax(5000, 21, @product_value, @tax_applied, @total_value);
+SELECT @product_value, @tax_applied, @total_value;
 	
 	
