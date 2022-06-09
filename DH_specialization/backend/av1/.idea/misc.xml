@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/app1-av1/pom.xml" />
+        <option value="$PROJECT_DIR$/app2-av1/pom.xml" />
+        <option value="$PROJECT_DIR$/config-av1/pom.xml" />
+        <option value="$PROJECT_DIR$/eureka-av1/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-av1/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>
