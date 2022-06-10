@@ -1,11 +1,9 @@
-const idade = 15
+function hasValidCardNumberLength(cardNumber) {
+  const lengthValidator = {
+    '15': true,
+    '16': true
+  }
+  return !!lengthValidator[String(cardNumber?.length)]
+}
 
-const name_simples = 'Vitor "Gostosão" Galbier';
-
-const name_duplas = "Vitor \"Lindo\" Galbier de ${idade} anos de idade";
-
-const name_template =`Vitor 'Deuso' ""Galbier de ${idade} anos de idade`;
-
-console.log(name_simples);
-console.log(name_duplas);
-console.log(name_template);
+console.log(hasValidCardNumberLength('000000000000000000'))
