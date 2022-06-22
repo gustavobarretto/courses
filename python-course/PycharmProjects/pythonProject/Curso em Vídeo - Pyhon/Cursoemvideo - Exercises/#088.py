@@ -19,7 +19,7 @@ for c in range(n):
         número = randint(1, 60)
         if número not in jogo:
             jogo.append(número)
-        if len(jogo) == 5:
+        if len(jogo) == 6:
             break
 
     jogo.sort()

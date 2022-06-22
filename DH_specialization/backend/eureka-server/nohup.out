@@ -1,0 +1,102 @@
+2022-05-23 20:00:16,868 [   1658]   WARN - #c.i.n.i.NotificationGroupManagerImpl - Notification group CodeWithMe is already registered (group=com.intellij.notification.NotificationGroup@ce5c5d3). Plugin descriptor: PluginDescriptor(name=Code With Me, id=com.jetbrains.codeWithMe, descriptorPath=plugin.xml, path=/snap/intellij-idea-community/361/plugins/cwm-plugin, version=221.5591.52, package=null, isBundled=true)
+Info  | RdCoroutineScope          | 18:JobScheduler FJ pool 5/11 | RdCoroutineHost overridden 
+2022-05-23 20:00:32,827 [   1893]   WARN - #c.i.n.i.NotificationGroupManagerImpl - Notification group CodeWithMe is already registered (group=com.intellij.notification.NotificationGroup@560d197e). Plugin descriptor: PluginDescriptor(name=Code With Me, id=com.jetbrains.codeWithMe, descriptorPath=plugin.xml, path=/snap/intellij-idea-community/361/plugins/cwm-plugin, version=221.5591.52, package=null, isBundled=true)
+Info  | RdCoroutineScope          | 29:JobScheduler FJ pool 6/11 | RdCoroutineHost overridden 
+2022-05-23 20:00:39,039 [   8105]   WARN - #c.i.o.a.i.ActionUpdater - 227 ms to grab EDT for OpenFileAction#update (com.intellij.ide.actions.OpenFileAction)
+2022-05-23 20:00:40,619 [   9685]   WARN - #c.i.o.a.i.ActionUpdater - 323 ms to grab EDT for CWMTelephonyGroup#update (com.jetbrains.rd.platform.codeWithMe.telephony.CWMTelephonyGroup)
+2022-05-23 20:00:40,620 [   9686]   WARN - #c.i.o.a.i.ActionUpdater - 320 ms to grab EDT for #update (com.intellij.toolWindow.ToolWindowHeader$1)
+2022-05-23 20:00:40,989 [  10055]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project eureka-server
+2022-05-23 20:00:41,206 [  10272]   WARN - #c.i.o.a.i.ActionUpdater - Calling `setPopup()` in WeighingNewActionGroup#update (com.intellij.ide.actions.WeighingNewActionGroup). Please use `event.getPresentation().setPopupGroup()` instead.
+2022-05-23 20:00:43,886 [  12952]   WARN - #c.i.o.v.ExternallyAddedFilesProcessorImpl - Cannot find project config directory for non-default and non-directory based project eureka-server
+2022-05-23 20:00:54,003 [  23069]   WARN - #c.i.o.a.i.ActionUpdater - 134 ms to call on EDT SurroundWithAction#update (com.intellij.codeInsight.generation.actions.SurroundWithAction). Use `UpdateInBackground`.
+2022-05-23 20:01:25,514 [  54580]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter-actuator::2.6.3, was also in node: null
+2022-05-23 20:01:25,515 [  54581]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter::2.6.3, was also in node: null
+2022-05-23 20:01:25,515 [  54581]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot::2.6.3, was also in node: null
+2022-05-23 20:01:25,515 [  54581]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-core::5.3.15, was also in node: null
+2022-05-23 20:01:25,515 [  54581]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-context::5.3.15, was also in node: null
+2022-05-23 20:01:25,516 [  54582]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-autoconfigure::2.6.3, was also in node: null
+2022-05-23 20:01:25,516 [  54582]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter-logging::2.6.3, was also in node: null
+2022-05-23 20:01:25,516 [  54582]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.slf4j:slf4j-api::1.7.33, was also in node: null
+2022-05-23 20:01:25,516 [  54582]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.slf4j:jul-to-slf4j::1.7.33, was also in node: null
+2022-05-23 20:01:25,517 [  54583]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-actuator-autoconfigure::2.6.3, was also in node: null
+2022-05-23 20:01:25,517 [  54583]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-actuator::2.6.3, was also in node: null
+2022-05-23 20:01:25,517 [  54583]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.micrometer:micrometer-core::1.8.2, was also in node: null
+2022-05-23 20:01:25,517 [  54583]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.hdrhistogram:HdrHistogram::2.1.12, was also in node: null
+2022-05-23 20:01:25,517 [  54583]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.latencyutils:LatencyUtils::2.0.3, was also in node: null
+2022-05-23 20:01:25,517 [  54583]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter-web::2.6.3, was also in node: null
+2022-05-23 20:01:25,517 [  54583]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter-json::2.6.3, was also in node: null
+2022-05-23 20:01:25,517 [  54583]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-web::5.3.15, was also in node: null
+2022-05-23 20:01:25,518 [  54584]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter-tomcat::2.6.3, was also in node: null
+2022-05-23 20:01:25,518 [  54584]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.tomcat.embed:tomcat-embed-core::9.0.56, was also in node: null
+2022-05-23 20:01:25,518 [  54584]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.tomcat.embed:tomcat-embed-el::9.0.56, was also in node: null
+2022-05-23 20:01:25,518 [  54584]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.tomcat.embed:tomcat-embed-websocket::9.0.56, was also in node: null
+2022-05-23 20:01:25,518 [  54584]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-beans::5.3.15, was also in node: null
+2022-05-23 20:01:25,518 [  54584]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-webmvc::5.3.15, was also in node: null
+2022-05-23 20:01:25,518 [  54584]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-aop::5.3.15, was also in node: null
+2022-05-23 20:01:25,518 [  54584]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-expression::5.3.15, was also in node: null
+2022-05-23 20:01:25,518 [  54584]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.cloud:spring-cloud-starter-netflix-eureka-server::3.1.0, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.cloud:spring-cloud-starter::3.1.0, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.cloud:spring-cloud-context::3.1.0, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.security:spring-security-crypto::5.6.1, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.cloud:spring-cloud-commons::3.1.0, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.security:spring-security-rsa::1.0.10.RELEASE, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.bouncycastle:bcpkix-jdk15on::1.68, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.bouncycastle:bcprov-jdk15on::1.68, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.cloud:spring-cloud-netflix-eureka-server::3.1.0, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter-freemarker::2.6.3, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.freemarker:freemarker::2.3.31, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-context-support::5.3.15, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.cloud:spring-cloud-netflix-eureka-client::3.1.0, was also in node: null
+2022-05-23 20:01:25,519 [  54585]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.netflix.eureka:eureka-client::1.10.17, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.netflix.netflix-commons:netflix-eventbus::0.3.0, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.netflix.netflix-commons:netflix-infix::0.3.0, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading commons-jxpath:commons-jxpath::1.3, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading joda-time:joda-time::2.3, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.antlr:antlr-runtime::3.4, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.antlr:stringtemplate::3.2.1, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.google.guava:guava::14.0.1, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.google.code.gson:gson::2.8.9, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.netflix.servo:servo-core::0.5.3, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.commons:commons-math::2.2, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.thoughtworks.xstream:xstream::1.4.18, was also in node: null
+2022-05-23 20:01:25,520 [  54586]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.github.x-stream:mxparser::1.2.2, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading xmlpull:xmlpull::1.1.3.1, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading javax.ws.rs:jsr311-api::1.1.1, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.netflix.servo:servo-core::0.12.21, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.google.guava:guava::19.0, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.sun.jersey:jersey-core::1.19.1, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.sun.jersey:jersey-client::1.19.1, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.sun.jersey.contribs:jersey-apache-client4::1.19.1, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.apache.httpcomponents:httpcore::4.4.15, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading commons-configuration:commons-configuration::1.10, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading commons-lang:commons-lang::2.6, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.google.inject:guice::4.1.0, was also in node: null
+2022-05-23 20:01:25,521 [  54587]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.codehaus.jettison:jettison::1.4.0, was also in node: null
+2022-05-23 20:01:25,522 [  54588]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.sun.jersey:jersey-servlet::1.19.4, was also in node: null
+2022-05-23 20:01:25,522 [  54588]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.sun.jersey:jersey-server::1.19.4, was also in node: null
+2022-05-23 20:01:25,522 [  54588]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.sun.jersey:jersey-core::1.19.4, was also in node: null
+2022-05-23 20:01:25,522 [  54588]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.sun.jersey:jersey-client::1.19.4, was also in node: null
+2022-05-23 20:01:25,522 [  54588]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.netflix.eureka:eureka-core::1.10.17, was also in node: null
+2022-05-23 20:01:25,522 [  54588]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.woodstox:woodstox-core::6.2.1, was also in node: null
+2022-05-23 20:01:25,522 [  54588]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.codehaus.woodstox:stax2-api::4.2.1, was also in node: null
+2022-05-23 20:01:25,523 [  54589]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.jackson.dataformat:jackson-dataformat-xml::2.13.1, was also in node: null
+2022-05-23 20:01:25,523 [  54589]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.fasterxml.woodstox:woodstox-core::6.2.7, was also in node: null
+2022-05-23 20:01:25,523 [  54589]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.cloud:spring-cloud-starter-loadbalancer::3.1.0, was also in node: null
+2022-05-23 20:01:25,523 [  54589]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.cloud:spring-cloud-loadbalancer::3.1.0, was also in node: null
+2022-05-23 20:01:25,523 [  54589]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.projectreactor:reactor-core::3.4.14, was also in node: null
+2022-05-23 20:01:25,523 [  54589]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.reactivestreams:reactive-streams::1.0.3, was also in node: null
+2022-05-23 20:01:25,523 [  54589]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading io.projectreactor.addons:reactor-extra::3.4.6, was also in node: null
+2022-05-23 20:01:25,523 [  54589]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter-cache::2.6.3, was also in node: null
+2022-05-23 20:01:25,524 [  54590]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading com.stoyanr:evictor::1.0.0, was also in node: null
+2022-05-23 20:01:25,524 [  54590]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.glassfish.jaxb:jaxb-runtime::2.3.5, was also in node: null
+2022-05-23 20:01:25,524 [  54590]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.glassfish.jaxb:txw2::2.3.5, was also in node: null
+2022-05-23 20:01:25,524 [  54590]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-starter-test::2.6.3, was also in node: null
+2022-05-23 20:01:25,524 [  54590]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-test::2.6.3, was also in node: null
+2022-05-23 20:01:25,524 [  54590]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-test-autoconfigure::2.6.3, was also in node: null
+2022-05-23 20:01:25,524 [  54590]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading net.minidev:json-smart::2.4.7, was also in node: null
+2022-05-23 20:01:25,525 [  54591]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading net.minidev:accessors-smart::2.4.7, was also in node: null
+2022-05-23 20:01:25,525 [  54591]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-jcl::5.3.15, was also in node: null
+2022-05-23 20:01:25,525 [  54591]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework:spring-test::5.3.15, was also in node: null
+2022-05-23 20:01:35,652 [  64718]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-maven-plugin::2.6.3, was also in node: null
+2022-05-23 20:01:36,672 [  65738]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-buildpack-platform::2.6.3, was also in node: null
+2022-05-23 20:01:36,673 [  65739]   WARN - #c.i.b.BuildTreeConsoleView - start event id collision found:Downloading org.springframework.boot:spring-boot-loader-tools::2.6.3, was also in node: null
