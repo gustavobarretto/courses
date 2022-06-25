@@ -30,7 +30,7 @@ public class MovieController {
 
     @PostMapping
     public ResponseEntity<?> create(@RequestBody MovieDTO dto) {
-        logger.info("POST request at", applicationName);
+        logger.info("POST request at " + applicationName);
         return ResponseEntity
                 .status(HttpStatus.NO_CONTENT)
                 .header("Location", "/movie/" + service.create(mapper.map(dto, Movie.class)).getId())
@@ -39,7 +39,7 @@ public class MovieController {
 
     @GetMapping("/{id}")
     public ResponseEntity<MovieDTO> get(@PathVariable Long id) {
-        logger.info("GET request at", applicationName);
+        logger.info("GET request at " + applicationName);
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(mapper.map(service.get(id), MovieDTO.class));
@@ -47,7 +47,7 @@ public class MovieController {
 
     @GetMapping
     public ResponseEntity<List<MovieDTO>> getAll() {
-        logger.info("GET ALL request at ", applicationName);
+        logger.info("GET ALL request at " + applicationName);
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(
