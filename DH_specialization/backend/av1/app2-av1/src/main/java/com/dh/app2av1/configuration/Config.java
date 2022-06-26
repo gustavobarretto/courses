@@ -13,17 +13,11 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class Config {
 
-    @Value("${queue.catalog.name}")
-    private String catalogQueue;
-
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplateBuilder().build();
-    }
+    private final String QUEUE = "QUEUE";
 
     @Bean
     public Queue queue() {
-        return new Queue(this.catalogQueue, false);
+        return new Queue(QUEUE, false);
     }
 
     @Bean

@@ -1,4 +1,4 @@
-package com.dh.app1av1;
+package com.dh.app1av1.configuration;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
@@ -13,13 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class Config {
 
-    @Value("${queue.catalog.name}")
-    private String catalogQueue;
-
-    @Bean
-    public RestTemplate restTemplate() {
-        return new RestTemplateBuilder().build();
-    }
+    private final String QUEUE = "QUEUE";
 
     @Bean
     public Jackson2JsonMessageConverter producerJackson2JsonMessageConverter() {
@@ -35,7 +29,7 @@ public class Config {
 
     @Bean
     public Queue queue() {
-        return new Queue(this.catalogQueue, false);
+        return new Queue(QUEUE, false);
     }
 
 }

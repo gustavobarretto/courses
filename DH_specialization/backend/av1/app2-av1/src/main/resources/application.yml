@@ -24,8 +24,3 @@ spring:
     password: guest
     host: localhost
     port: 5672
-
-queue:
-  catalog:
-    name: catalog-queue
-  message: movie up

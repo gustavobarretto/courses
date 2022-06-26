@@ -1,4 +1,4 @@
-package com.dh.app1av1;
+package com.dh.app1av1.feign;
 
 import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
 import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClientConfiguration;

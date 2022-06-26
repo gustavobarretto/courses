@@ -1,9 +1,9 @@
-package com.dh.app1av1;
+package com.dh.app1av1.controller;
 
+import com.dh.app1av1.service.impl.CatalogServiceImpl;
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ import org.springframework.web.client.RestTemplate;
 @AllArgsConstructor
 public class CatalogController {
 
-    private final CatalogService service;
+    private final CatalogServiceImpl service;
     private final RestTemplate restTemplate;
     private static final Logger logger = LoggerFactory.getLogger(CatalogController.class);
 
