@@ -12,8 +12,6 @@ public class CatalogService {
     private final MovieFeign service;
 
     public List<Object> getByGenre(String genre) {
-        System.out.println("AQUI:");
-        System.out.println(service.findByGenre(genre));
         return service.findByGenre(genre);
     }
 

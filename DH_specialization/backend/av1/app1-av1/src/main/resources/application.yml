@@ -6,3 +6,13 @@ spring:
   cloud:
     config:
       profile: dev
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+
+queue:
+  catalog:
+    name: catalog-queue
+  message: catalog up

@@ -1,0 +1,40 @@
+server:
+  port: 8002
+  servlet:
+    context-path: /registro/
+
+spring:
+  application:
+    name: registracion-service
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+
+queue:
+  persona:
+    name: PersonaQueue
+
+message: registro up
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info
+  info:
+    env:
+      enabled: true
+  endpoint:
+    info:
+      enabled: true
+
+info:
+  app:
+    name: ${spring.application.name}
+    version: 1.0.0
+    description: microservicio registracion
+  svc:
+    #    intanceid: ${eureka.instance.instance-id}
+    port: ${server.port}

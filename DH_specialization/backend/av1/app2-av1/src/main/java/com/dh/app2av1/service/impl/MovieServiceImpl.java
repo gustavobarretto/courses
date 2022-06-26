@@ -26,8 +26,6 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public List<Movie> findByGenre(String genre) {
-        System.out.println("AQUI OH:");
-        System.out.println(repository.findByGenre(genre));
         return repository.findByGenre(genre);
     }
 

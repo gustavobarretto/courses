@@ -26,7 +26,7 @@ public class CatalogController {
 
     @GetMapping("{genre}")
     public ResponseEntity<?> getMoviesByGenre(@PathVariable String genre) {
-        logger.info("GET request at ", applicationName);
+        logger.info("GET request at " + applicationName);
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(service.getByGenre(genre));
