@@ -16,6 +16,11 @@ public class Config {
     private final String QUEUE = "QUEUE";
 
     @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
+    @Bean
     public Jackson2JsonMessageConverter producerJackson2JsonMessageConverter() {
         return new Jackson2JsonMessageConverter();
     }

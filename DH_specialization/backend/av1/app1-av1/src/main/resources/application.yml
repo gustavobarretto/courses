@@ -9,7 +9,7 @@ spring:
 
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/movies?useTimezone=true&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/catalog?useTimezone=true&serverTimezone=UTC&createDatabaseIfNotExist=true
     user: root
     password: root1234
 

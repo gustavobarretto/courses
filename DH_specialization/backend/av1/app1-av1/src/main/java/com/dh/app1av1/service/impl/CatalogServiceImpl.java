@@ -2,9 +2,10 @@ package com.dh.app1av1.service.impl;
 
 import com.dh.app1av1.entity.Catalog;
 import com.dh.app1av1.feign.MovieFeign;
-import com.dh.app1av1.repository.ICatalogRepository;
+import com.dh.app1av1.repository.CatalogRepository;
 import com.dh.app1av1.service.CatalogService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,9 +14,10 @@ import java.util.List;
 @AllArgsConstructor
 public class CatalogServiceImpl implements CatalogService {
 
-    private final MovieFeign feign;
-    private final ICatalogRepository repository;
+    private MovieFeign feign;
+    private CatalogRepository repository;
 
+    @Override
     public List<Object> getByGenre(String genre) {
         return feign.findByGenre(genre);
     }

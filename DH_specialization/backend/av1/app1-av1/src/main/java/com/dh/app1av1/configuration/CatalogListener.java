@@ -3,11 +3,12 @@ package com.dh.app1av1.configuration;
 import com.dh.app1av1.entity.Catalog;
 import com.dh.app1av1.service.CatalogService;
 import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 @Component
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class CatalogListener {
 
     private final CatalogService service;

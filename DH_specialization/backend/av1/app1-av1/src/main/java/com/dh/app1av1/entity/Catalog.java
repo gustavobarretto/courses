@@ -1,14 +1,15 @@
 package com.dh.app1av1.entity;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Getter
-@Setter
+@Data
+@Builder
+@Table(name = "catalog")
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Catalog {
 
     @Id
