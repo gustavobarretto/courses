@@ -6,7 +6,7 @@ use DHVacinas
 ```
 
 ```mongosh
-db.paciente.insertMany([{"name": "Gustavo", "age": 28, "domicilio": "Salvador", "uf": "BA", "dtVacina": "20/02/2021", "situacao": "vacinado"}, {"name": "Sophia", "age": 26, "domicilio": "São Paulo", "uf": "SP", "dtVacina": "10/04/2021", "situacao": "vacinado"}, {"name": "Silas", "age": 20, "domicilio": "Rio de Janeiro", "uf": "RJ", "dtVacina": "19/08/2021", "situacao": "nao vacinado"}])
+db.paciente.insertMany([{"name": "Gustavo", "age": 28, "domicilio": "Salvador", "uf": "BA", "dtVacina": "20/02/2021", "vacinado": true}, {"name": "Sophia", "age": 26, "domicilio": "São Paulo", "uf": "SP", "dtVacina": "10/04/2021", "vacinado": true}, {"name": "Silas", "age": 20, "domicilio": "Rio de Janeiro", "uf": "RJ", "dtVacina": "", "situacao": false}])
 ```
 
 ```mongosh
