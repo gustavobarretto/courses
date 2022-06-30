@@ -2,7 +2,7 @@
 ## List of commands
 
 ```mongosh
-use checkpoint2
+use DHVacinas
 ```
 
 ```mongosh
