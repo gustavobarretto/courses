@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app1-av1/app1-av1.iml" filepath="$PROJECT_DIR$/app1-av1/app1-av1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app2-av1/app2-av1.iml" filepath="$PROJECT_DIR$/app2-av1/app2-av1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app3-av2/app3-av2.iml" filepath="$PROJECT_DIR$/app3-av2/app3-av2.iml" />
       <module fileurl="file://$PROJECT_DIR$/config-av1/config-av1.iml" filepath="$PROJECT_DIR$/config-av1/config-av1.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-av1/eureka-av1.iml" filepath="$PROJECT_DIR$/eureka-av1/eureka-av1.iml" />
       <module fileurl="file://$PROJECT_DIR$/gateway-av1/gateway-av1.iml" filepath="$PROJECT_DIR$/gateway-av1/gateway-av1.iml" />

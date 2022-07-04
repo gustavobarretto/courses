@@ -10,6 +10,7 @@
         <module name="gateway-av1" />
         <module name="app2-av1" />
         <module name="app1-av1" />
+        <module name="app3-av2" />
         <module name="config-av1" />
         <module name="eureka-av1" />
       </profile>
@@ -17,6 +18,7 @@
     <bytecodeTargetLevel>
       <module name="app1-av1" target="11" />
       <module name="app2-av1" target="11" />
+      <module name="app3-av2" target="11" />
       <module name="config-av1" target="11" />
       <module name="eureka-av1" target="11" />
       <module name="gateway-av1" target="11" />
@@ -26,6 +28,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="app1-av1" options="-parameters" />
       <module name="app2-av1" options="-parameters" />
+      <module name="app3-av2" options="-parameters" />
       <module name="config-av1" options="-parameters" />
       <module name="eureka-av1" options="-parameters" />
       <module name="gateway-av1" options="-parameters" />
