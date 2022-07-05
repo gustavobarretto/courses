@@ -108,6 +108,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<finalName>catalog-service</finalName>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

@@ -99,6 +99,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<finalName>serie-service</finalName>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

@@ -1,10 +1,86 @@
 version: "3.2"
 services:
+
+  gateway:
+    build: gateway-av1
+    container_name: gateway
+    depends_on:
+      - eureka
+      - movie-service
+      - catalog-service
+      - serie-service
+      - config
+      - zipkin
+      - rabbitmq
+    ports:
+      - 8080:8080
+
+  eureka:
+    build: eureka-av1
+    container_name: eureka
+    depends_on:
+      - config
+      - zipkin
+      - rabbitmq
+    ports:
+      - 8761:8761
+
+  config:
+    build: config-av1
+    container_name: config
+    depends_on:
+      - zipkin
+      - rabbitmq
+    ports:
+      - 8084:8084
+
+  movie-service:
+    build: app2-av1
+    container_name: movie-service
+    depends_on:
+      - eureka
+      - config
+      - zipkin
+      - rabbitmq
+    ports:
+      - 8081:8081
+
+  db_sql:
+    image: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root1234
+    ports:
+      - 3306:3306
+
+  catalog-service:
+    build: app1-av1
+    container_name: catalog-service
+    depends_on:
+      - eureka
+      - config
+      - zipkin
+      - rabbitmq
+    ports:
+      - 8082:8082
+
+  serie-service:
+    build: app3-av2
+    container_name: serie-service
+    depends_on:
+      - eureka
+      - config
+      - zipkin
+      - rabbitmq
+    ports:
+      - 8083:8083
+
   zipkin:
     image: openzipkin/zipkin:2
     container_name: zipkin
     ports:
       - 9411:9411
+
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq
@@ -15,4 +91,5 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
-
+    depends_on:
+      - zipkin
