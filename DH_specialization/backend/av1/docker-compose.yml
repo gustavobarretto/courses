@@ -1,6 +1,10 @@
 version: "3.2"
-services:
 
+networks:
+  linux_network:
+    driver: bridge
+
+services:
   gateway:
     build: gateway-av1
     container_name: gateway
@@ -9,21 +13,20 @@ services:
       - movie-service
       - catalog-service
       - serie-service
-      - config
-      - zipkin
-      - rabbitmq
     ports:
       - 8080:8080
+    networks:
+      - linux_network
 
   eureka:
     build: eureka-av1
     container_name: eureka
     depends_on:
-      - config
       - zipkin
-      - rabbitmq
     ports:
       - 8761:8761
+    networks:
+      - linux_network
 
   config:
     build: config-av1
@@ -32,18 +35,19 @@ services:
       - zipkin
       - rabbitmq
     ports:
-      - 8084:8084
+      - 8888:8888
+    networks:
+      - linux_network
 
   movie-service:
     build: app2-av1
     container_name: movie-service
     depends_on:
       - eureka
-      - config
-      - zipkin
-      - rabbitmq
     ports:
       - 8081:8081
+    networks:
+      - linux_network
 
   db_sql:
     image: mysql
@@ -52,34 +56,36 @@ services:
       - MYSQL_ROOT_PASSWORD=root1234
     ports:
       - 3306:3306
+    networks:
+      - linux_network
 
   catalog-service:
     build: app1-av1
     container_name: catalog-service
     depends_on:
       - eureka
-      - config
-      - zipkin
-      - rabbitmq
     ports:
       - 8082:8082
+    networks:
+      - linux_network
 
   serie-service:
     build: app3-av2
     container_name: serie-service
     depends_on:
       - eureka
-      - config
-      - zipkin
-      - rabbitmq
     ports:
       - 8083:8083
+    networks:
+      - linux_network
 
   zipkin:
     image: openzipkin/zipkin:2
     container_name: zipkin
     ports:
       - 9411:9411
+    networks:
+      - linux_network
 
   rabbitmq:
     image: rabbitmq:3-management
@@ -91,5 +97,5 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=guest
       - RABBITMQ_DEFAULT_PASS=guest
-    depends_on:
-      - zipkin
+    networks:
+      - linux_network

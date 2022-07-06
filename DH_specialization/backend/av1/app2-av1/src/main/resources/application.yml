@@ -1,15 +1,15 @@
 spring:
   application:
     name: movie-service
-  config:
-    import: optional:configserver:http://localhost:8888
-  cloud:
-    config:
-      profile: dev
+#  config:
+#    import: optional:configserver:http://config:8888
+#  cloud:
+#    config:
+#      profile: dev
 
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/movies?useTimezone=true&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url: jdbc:mysql://db_sql:3306/movies?useTimezone=true&serverTimezone=UTC&createDatabaseIfNotExist=true
     user: root
     password: root1234
 

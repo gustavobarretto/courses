@@ -1,9 +1,13 @@
 server:
-  port: ${PORT:8761}
+  port: 8761
 eureka:
+  instance:
+    hostname: eureka
   client:
     register-with-eureka: false
     fetch-registry: false
 spring:
   application:
     name: eureka
+  zipkin:
+    base-url: http://zipkin:9411/
