@@ -1,0 +1,22 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  zipkin:
+    base-url: http://zipkin-service:9411/
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/tulioviglione/configCloudAux
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-service:8761/eureka/

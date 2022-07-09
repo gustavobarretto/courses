@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka-service
+  zipkin:
+    base-url: http://zipkin-service:9411/
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: eureka-service
+  client:
+    registerWithEureka: true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    wait-time-in-ms-when-sync-empty: 3000

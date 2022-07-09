@@ -1,0 +1,62 @@
+version: '3.2'
+
+services:
+  mongodb:
+    image: mongo:4.4.2
+    ports:
+      - "27017:27017"
+
+  zipkin-service:
+    image: openzipkin/zipkin:2
+    container_name: zipkin-service
+    ports:
+      - 9411:9411
+
+  rabbitmq-service:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-service
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+  eureka-service:
+    build: eureka-service
+    container_name: eureka-service
+    depends_on:
+      - zipkin-service
+      - mongodb
+    ports:
+      - 8761:8761
+
+  config-server:
+    build: server-config
+    container_name: config-server
+    depends_on:
+      - eureka-service
+    ports:
+      - 8888:8888
+
+  movie-service:
+    build: movie-service
+    container_name: movie-service
+    depends_on:
+      - config-server
+    ports:
+      - 8001:8001
+
+  catalog-service:
+    build: catalog-service
+    container_name: catalog-service
+    depends_on:
+      - config-server
+      - movie-service
+    ports:
+      - 8002:8002
+
+  api-gateway:
+    build: api-gateway 
+    container_name: api-gateway
+    depends_on:
+      - catalog-service
+    ports:
+      - 8080:8080
