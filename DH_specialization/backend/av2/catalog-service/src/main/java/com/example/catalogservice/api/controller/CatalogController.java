@@ -1,6 +1,7 @@
 package com.example.catalogservice.api.controller;
 
 import com.example.catalogservice.api.client.MovieServiceClient;
+import com.example.catalogservice.api.client.dto.MovieDto;
 import com.example.catalogservice.domain.model.Movie;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +20,8 @@ public class CatalogController {
 		return serviceClient.getMovieByGenre(genre);
 	}
 
-	@PostMapping ("/salvar")
-	ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
-		return serviceClient.saveMovie(movie);
+	@PostMapping
+	ResponseEntity<Movie> create(@RequestBody MovieDto movie) {
+		return serviceClient.create(movie);
 	}
 }
