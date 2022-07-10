@@ -10,7 +10,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/tulioviglione/configCloudAux
+          uri: https://github.com/gustavobarretto/spring-config-av1
 
 eureka:
   instance:

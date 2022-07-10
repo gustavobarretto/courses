@@ -20,7 +20,7 @@ spring:
         - id: movie-service
           uri: http://movie-service:8001
           predicates:
-            - Path=/movies/**
+            - Path=/movie/**
           filters:
             - name: CircuitBreaker
               args:
@@ -35,6 +35,15 @@ spring:
               args:
                 name: catalogService
                 fallbackUri: forward:/fallback/catalog
+        - id: serie-service
+          uri: http://serie-service:8003
+          predicates:
+            - Path=/serie/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: catalogService
+                fallbackUri: forward:/fallback/serie
 
 eureka:
   instance:

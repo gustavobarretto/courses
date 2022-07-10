@@ -1,0 +1,17 @@
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\config\RabbitMQSenderConfig.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\service\MovieService.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\queue\MovieSender.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\api\client\dto\MovieDto.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\config\RabbitTemplateConfig.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\domain\model\Movie.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\domain\model\Season.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\domain\model\Genre.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\domain\model\Serie.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\repository\MovieRepository.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\MovieController.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\api\controller\TestController.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\service\MovieServiceImpl.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\api\client\MovieServiceClient.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\api\controller\CatalogController.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\CatalogServiceApplication.java
+C:\Users\Gustavo\Desktop\ws\programming\courses\DH_specialization\backend\av2\catalog-service\src\main\java\com\example\catalogservice\domain\model\Chapter.java
