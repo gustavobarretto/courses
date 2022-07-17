@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="https://www.mongodb.com/assets./images/global/favicon.ico"/>
+    <script src="https://unpkg.com/realm-web@1.2.0/dist/bundle.iife.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Minhas Músicas Favoritas</title>
+</head>
+<body>
+<h1>Minhas Músicas</h1>
+<div>
+    <!-- Login anonimo -->
+    <input type="submit" value="LOGIN" onClick="login()">
+    <!-- Lista 20 músicas da coleção musimundos -->
+    <input type="submit" value="Listar 20 músicas" onClick="find_movies()">
+</div>
+<!-- Nesta div é exibito o id do usuário anonimo -->
+<div id="user"></div>
+<!-- Nesta div são exibidos os nomes dos 20 filmes -->
+<div id="movies"></div>
+<!-- Neste arquivo estão as funções utilizadas: login() and find_movies() -->
+<script src="data.js"></script>
+</body>
+</html>
