@@ -1,5 +1,6 @@
 package com.example.catalogservice.api.client;
 
+import com.example.catalogservice.api.client.dto.MovieDto;
 import com.example.catalogservice.domain.model.Movie;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +17,7 @@ public interface MovieServiceClient {
 	@GetMapping("/{genre}")
 	ResponseEntity<List<Movie>> getMovieByGenre(@PathVariable(value = "genre") String genre);
 
-	@PostMapping("/salvar")
-	ResponseEntity<Movie> saveMovie(@RequestBody Movie movie);
+	@PostMapping
+	ResponseEntity<Movie> create(@RequestBody MovieDto movie);
 
 }

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FallBackController {
 
 	@CircuitBreaker(name = "moviesService")
-	@GetMapping ("/movies")
+	@GetMapping ("/movie")
 	public ResponseEntity<String> moviesFallback () {
 		return new ResponseEntity<>("Servidor de filmes indisponível. Por favor, contate o suporte.",
 				HttpStatus.INTERNAL_SERVER_ERROR);

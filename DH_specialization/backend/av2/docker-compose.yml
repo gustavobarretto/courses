@@ -50,8 +50,17 @@ services:
     depends_on:
       - config-server
       - movie-service
+      - serie-service
     ports:
       - 8002:8002
+
+  serie-service:
+    build: serie-service
+    container_name: serie-service
+    depends_on:
+      - config-server
+    ports:
+      - 8003:8003
 
   api-gateway:
     build: api-gateway 
