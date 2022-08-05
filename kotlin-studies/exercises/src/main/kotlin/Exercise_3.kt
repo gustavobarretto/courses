@@ -1,7 +1,10 @@
 fun main() {
-    val meuNome = "Pedro"
-        meuNome = "Jose"
-        println("meu nome é: $meuNome")
+    val string = "2.0.12345"
+
+    println(string.substring(0,1))
+    println(string.substring(0,1) == "3")
+    
+
 
 
 }
