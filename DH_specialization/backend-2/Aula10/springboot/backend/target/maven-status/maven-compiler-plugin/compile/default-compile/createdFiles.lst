@@ -1,0 +1,3 @@
+org\keycloak\springboot\SecurityConfig.class
+org\keycloak\springboot\Application.class
+org\keycloak\springboot\HelloController.class
