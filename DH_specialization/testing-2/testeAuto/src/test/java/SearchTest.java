@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Tag("SmokeTest")
 public class SearchTest {
 
     private static SearchPage page;
@@ -19,7 +20,6 @@ public class SearchTest {
     }
 
     @Test
-    @Tag("SmokeTest")
     public void testSearch() throws InterruptedException {
 
         page.buscarCidade("Punta del Este");

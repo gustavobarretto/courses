@@ -1,0 +1,6 @@
+digitalBooking\base\BasePage.class
+digitalBooking\pages\LoginPageReserva.class
+digitalBooking\pages\LoginPage.class
+digitalBooking\base\BasePageReserva.class
+digitalBooking\pages\SearchPage.class
+digitalBooking\pages\SearchPageReserva.class

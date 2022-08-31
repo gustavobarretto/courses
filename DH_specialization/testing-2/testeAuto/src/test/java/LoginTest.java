@@ -3,7 +3,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-//@Tag("Regression")
+@Tag("Regression")
 public class LoginTest {
 
     private static LoginPage page;
@@ -17,7 +17,6 @@ public class LoginTest {
     }
 
     @Test
-    @Tag("Regression")
     public void testeLogin() throws InterruptedException {
 
         page.irParaIniciarSessao();
@@ -34,7 +33,6 @@ public class LoginTest {
 
     }
 
-    @Tag("Regression")
     @Test
     public void testeLogin2() throws InterruptedException {
 

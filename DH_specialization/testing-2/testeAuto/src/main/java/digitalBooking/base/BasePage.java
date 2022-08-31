@@ -21,8 +21,8 @@ public class BasePage {
     }
 
     public void openApp() {
-        getDriver().get(URL);
         getDriver().manage().window().maximize();
+        getDriver().get(URL);
     }
 
     public WebDriver getDriver() {

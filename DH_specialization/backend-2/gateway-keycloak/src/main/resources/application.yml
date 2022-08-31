@@ -1,0 +1,17 @@
+server:
+  port: 8083
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak-provider:
+            issuer-uri: http://localhost:8080/realms/api-gateway
+        registration:
+          keycloak-registration:
+            provider:  keycloak-provider
+            client-id: bills-app
+            client-secret: AB0WmtgEKlqX4cFUgO3ZSDDN7e5OO0Px
+            authorization-grant-type: authorization_code
+            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"

@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 public class LoginPage extends BasePage {
 
     protected static final String btnIniciarSessao = "//*[@id=\"root\"]/header/nav/a[2]"; //xpath
+
+    protected static final String txtIniciarSessao = "Iniciar sesión"; //partialLinkText
     protected static final String inputLogin = "email"; //id
     protected static final String inputPassword = "password"; //id
     protected static final String btnEntrar = "#root > main > div > form > button"; //cssSelector
@@ -18,6 +20,13 @@ public class LoginPage extends BasePage {
         botaoIniciarSessao.click();
         Thread.sleep(1000);
     }
+
+    public void irParaIniciarSessaoReservaTest() throws InterruptedException {
+        WebElement botaoIniciarSessao = getWebElement(By.partialLinkText(txtIniciarSessao));
+        botaoIniciarSessao.click();
+        Thread.sleep(1000);
+    }
+
 
     public void inserirDadosLogin(String email, String senha) {
         WebElement campoLogin = getWebElement(By.id(inputLogin));
