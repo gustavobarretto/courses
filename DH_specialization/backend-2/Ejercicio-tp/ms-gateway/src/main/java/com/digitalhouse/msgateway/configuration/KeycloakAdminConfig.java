@@ -1,4 +1,4 @@
-package com.digitalhouse.msgateway.configuration;
+package com.example.msdiscovery.configuration;
 
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.KeycloakBuilder;

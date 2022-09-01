@@ -1,4 +1,4 @@
-package com.digitalhouse.msgateway.configuration;
+package com.example.msdiscovery.configuration;
 
 import lombok.RequiredArgsConstructor;
 import lombok.Value;
@@ -46,7 +46,8 @@ public class KeycloakInitializerRunner implements CommandLineRunner {
         ClientRepresentation clientRepresentation = new ClientRepresentation();
         clientRepresentation.setClientId(BILLS_APP_ID);
         clientRepresentation.setDirectAccessGrantsEnabled(true);
-        clientRepresentation.setPublicClient(true);
+        clientRepresentation.setPublicClient(false);
+        clientRepresentation.setSecret(BILLS_CLIENT_SECRET);
         clientRepresentation.setRedirectUris(Collections.singletonList(BILLS_APP_REDIRECT_URL));
         clientRepresentation.setDefaultRoles(new String[]{USER});
         realmRepresentation.setClients(Collections.singletonList(clientRepresentation));
@@ -75,20 +76,37 @@ public class KeycloakInitializerRunner implements CommandLineRunner {
         keycloakAdmin.realms().create(realmRepresentation);
 
         // Testing
-        UserPass admin = BILLS_APP_USERS.get(0);
-        log.info("Testing getting token for '{}' ...", admin.getUsername());
+        // Users created
 
-        Keycloak keycloakBillsApp = KeycloakBuilder.builder().serverUrl(KEYCLOAK_SERVER_URL)
-                .realm(BILLS_SERVICE_REALM_NAME).username(admin.getUsername()).password(admin.getPassword())
-                .clientId(BILLS_APP_ID).build();
 
-        log.info("'{}' token: {}", admin.getUsername(), keycloakBillsApp.tokenManager().grantToken().getToken());
+
+        UserPass user = BILLS_APP_USERS.get(0);
+        log.info("login in realm with this credentials '{}'", user.getUsername());
+        log.info("username: {}", user.getUsername());
+        log.info("password: {}", user.getPassword());
+
+        log.info("Testing getting token for '{}' ...", user.getUsername());
+
+        Keycloak keycloakBillsApp = KeycloakBuilder.builder()
+                .serverUrl(KEYCLOAK_SERVER_URL)
+                .realm(BILLS_SERVICE_REALM_NAME)
+                .username(user.getUsername())
+                .password(user.getPassword())
+                .clientId(BILLS_APP_ID)
+                .clientSecret(BILLS_CLIENT_SECRET)
+                .build();
+
+        log.info("'{}' token: {}", user.getUsername(), keycloakBillsApp
+                .tokenManager()
+                .grantToken()
+                .getToken()
+        );
+
         log.info("'{}' initialization completed successfully!", BILLS_SERVICE_REALM_NAME);
     }
 
     private Map<String, List<String>> getClientRoles(UserPass userPass) {
         List<String> roles = new ArrayList<>();
-        roles.add(ADMIN);
         roles.add(USER);
         return Map.of(BILLS_APP_ID, roles);
     }
@@ -96,6 +114,7 @@ public class KeycloakInitializerRunner implements CommandLineRunner {
     private static final String KEYCLOAK_SERVER_URL = "http://localhost:8080";
     private static final String BILLS_SERVICE_REALM_NAME = "bills-service";
     private static final String BILLS_APP_ID = "bills-app";
+    private static final String BILLS_CLIENT_SECRET = "QEjznaJdw91A03iqFa7p8klE3PesLzad";
     private static final String BILLS_APP_REDIRECT_URL = "http://localhost:8090/*";
     private static final List<UserPass> BILLS_APP_USERS = Arrays.asList(
             new UserPass("admin", "admin"),
@@ -109,5 +128,4 @@ public class KeycloakInitializerRunner implements CommandLineRunner {
     }
 
     private final String USER = "USER";
-    private final String ADMIN = "ADMIN";
 }
