@@ -1,0 +1,19 @@
+server:
+  port: 8084
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak-registration:
+            provider: keycloak-provider
+            client-id: backend
+            authorization-grant-type: client_credentials
+            client-secret: PoxjZ6ZZq668lI0ExTWqnLPSbWeXfhKf
+        provider:
+          keycloak-provider:
+            token-uri: http://localhost:8082/realms/digital-house/protocol/openid-connect/token
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:8082/realms/digital-house

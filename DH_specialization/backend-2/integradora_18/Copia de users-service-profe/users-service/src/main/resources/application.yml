@@ -1,0 +1,8 @@
+dh:
+  keycloak:
+    realm: digital-house
+    serveurl: http://localhost:8082/
+    clientid: backend
+    clientsecret: TLP9Bau4NLouo8Cb0I8yzydfxq35AIHC
+server:
+  port: 8083

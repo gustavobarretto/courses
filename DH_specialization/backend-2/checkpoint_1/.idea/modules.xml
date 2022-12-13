@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/ms-bills/ms-bills.iml" filepath="$PROJECT_DIR$/ms-bills/ms-bills.iml" />
       <module fileurl="file://$PROJECT_DIR$/ms-discovery/ms-discovery.iml" filepath="$PROJECT_DIR$/ms-discovery/ms-discovery.iml" />
       <module fileurl="file://$PROJECT_DIR$/ms-gateway/ms-gateway.iml" filepath="$PROJECT_DIR$/ms-gateway/ms-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ms-users/ms-users.iml" filepath="$PROJECT_DIR$/ms-users/ms-users.iml" />
     </modules>
   </component>
 </project>

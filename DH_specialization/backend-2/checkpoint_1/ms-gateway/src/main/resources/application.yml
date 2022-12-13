@@ -26,16 +26,22 @@ spring:
             - Path=/api/v1/**
           filters:
             - StripPrefix=2
+        - id: ms-user
+          uri: lb://ms-user
+          predicates:
+            - Path=/api/v1/**
+          filters:
+            - StripPrefix=2
   security:
     oauth2:
       client:
         provider:
-          bills-app:
+          gateway-app:
             issuer-uri: http://localhost:8080/realms/bills-service
         registration:
           bills-app:
-            provider: bills-app
-            client-id: bills-app
-            client-secret: Fkl0TnySRAluwqIbWQ03NG4dBYvhNzt2
+            provider: gateway-app
+            client-id: gateway-app
+            client-secret: 2Ud0hPHupOIcA1AH38cNyEqtMN2dNprh
             authorization-grant-type: authorization_code
-            redirect-uri: "{baseUrl}/login/oauth2/code/keycloak"
+            redirect-uri: 'http://localhost:8090/login/oauth2/code/keycloak'

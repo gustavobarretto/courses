@@ -1,0 +1,21 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: ms-user
+  security:
+    oauth2:
+      client:
+        registration:
+          users-app:
+            provider: users-app
+            client-id: users-app
+            authorization-grant-type: client_credentials
+            client-secret: Sas9u1LEQX90g9wLOZwMkaaXaIL9bZCC
+        provider:
+          users-app:
+            token-uri: http://localhost:8080/realms/bills-service/protocol/openid-connect/token
+      resource-server:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/bills-service

@@ -39,7 +39,7 @@ func CreateTicketsData() (ticketsData TicketsData, err error) {
 	if err != nil {
 		return ticketsData, fmt.Errorf("open file error: %w", err)
 	}
-	err = CSVTreatment(res, &ticketsData); if err != nil {
+	err = csvTreatment(res, &ticketsData); if err != nil {
 		return ticketsData, fmt.Errorf("CSV treatment error: %w", err)
 	}
 	return ticketsData, nil
@@ -53,7 +53,7 @@ func openFile() ([]byte, error) {
 	return csv, nil
 }
 
-func CSVTreatment(csv []byte, ticketData *TicketsData) error {
+func csvTreatment(csv []byte, ticketData *TicketsData) error {
 	data := strings.Split(string(csv), "\n")
 	for _, row := range data {
 		info := strings.Split(row, ",")
@@ -133,7 +133,6 @@ func countDistinctsCountries(tickets []Ticket) (total int) {
 }
 
 func (td *TicketsData) AverageDestination(destination string) (average float64, err error) {
-	
 	total := td.TotalByDestination[destination]; if total == 0 {
 		total, err = td.GetTotalTickets(destination); if err != nil {
 			return 0, fmt.Errorf("error to get all tickets to average destination: %w", err)
