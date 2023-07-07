@@ -10,9 +10,9 @@ import (
 )
 
 const (
-	dbType = "mysql"
+	dbType        = "mysql"
 	uriConnection = "user:@tcp(localhost:3306)/my_db"
-	scriptPath = "./config/initial_script.sql"
+	scriptPath    = "./config/initial_script.sql"
 )
 
 func Connection() (*sql.DB, error) {
@@ -27,7 +27,7 @@ func Connection() (*sql.DB, error) {
 
 	if err := d.Ping(); err != nil {
 		log.WithFields(log.Fields{
-			"db_type":        dbType,
+			"db_type":           dbType,
 			"addressConnection": uriConnection,
 		}).WithError(err).Info("error trying to ping the database")
 		return nil, err
@@ -35,13 +35,13 @@ func Connection() (*sql.DB, error) {
 	file, err := ioutil.ReadFile(scriptPath)
 	if err != nil {
 		log.WithFields(log.Fields{
-			"scriptPath":        scriptPath,
+			"scriptPath": scriptPath,
 		}).WithError(err).Info("error trying to read initial script")
 	}
 
 	requests := strings.Split(string(file), ";")
 	for _, request := range requests {
-		_, err = d.Exec(request);
+		_, err = d.Exec(request)
 	}
 
 	return d, nil
